@@ -1,0 +1,59 @@
+# ============================================================
+# .gitignore for ITPG 708 Diabetes Screening Project
+# ============================================================
+
+# CRITICAL: Never commit API keys
+.env
+.env.local
+*.key
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Dataset — too large for GitHub (5,000 patients, ~2GB)
+# Instructions in README for downloading separately
+OIA-ODIR-Merged/
+
+# Benchmark results:
+#   KEEP final metrics + predictions so the instructor can see them
+#   IGNORE incremental temporary files
+#   IGNORE old/stale subfolders from earlier runs
+results/*_INCR.csv
+results/.tmp/
+results/s/
+results/old/
+results/tmp/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Deprecated files (marked for deletion)
+app/OLD_app.py
