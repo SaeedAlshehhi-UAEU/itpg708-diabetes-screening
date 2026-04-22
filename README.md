@@ -1,4 +1,4 @@
-# Multimodal Agentic AI for Diabetic Retinopathy Screening: Benchmarking Closed-Source and Open-Weight Vision-Language Model
+# Multimodal Agentic AI for Diabetic Retinopathy Screening: Benchmarking Closed-Source and Open-Weight Vision-Language Models
 
 **ITPG 708 Final Project – Spring 2026 | United Arab Emirates University**
 
@@ -47,6 +47,7 @@ All listed in `requirements.txt`:
 - `Pillow>=10.0.0` — Image processing
 - `python-dotenv>=1.0.0` — Environment variable loading
 - `tqdm>=4.66.0` — Progress bars
+- `openpyxl>=3.1.0` — Excel file support (for dataset merging)
 
 ---
 
@@ -65,7 +66,7 @@ No GPU is required — all model inference is performed via cloud APIs.
 
 ### Step 1 — Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/itpg708-diabetes-screening.git
+git clone https://github.com/SaeedAlshehhi-UAEU/itpg708-diabetes-screening.git
 cd itpg708-diabetes-screening
 ```
 
@@ -96,21 +97,70 @@ OPENROUTER_API_KEY=sk-or-v1-your-key-here
 ```
 Get an API key at https://openrouter.ai/.
 
-### Step 5 — Download the OIA-ODIR Dataset
+### Step 5 — Download and Prepare the OIA-ODIR Dataset
+
 The dataset is available from the official repository: **https://github.com/nkicsl/OIA-ODIR**
 
-Follow the instructions in that repository to download the training and test splits, then consolidate the patient metadata and fundus images into the following local structure:
+The official OIA-ODIR distribution is split into three separate subsets — **Training Set**, **On-site Test Set**, and **Off-site Test Set** — each with its own Excel annotation file and image folder. This project merges these subsets into a single unified dataset to simplify stratified sampling and evaluation.
+
+**Step 5.1 — Download the raw dataset** from the official repository and extract it so the local layout looks like this:
+
+```
+Final_Project/
+└── OIA-ODIR/
+    ├── Training Set/
+    │   ├── Annotation/
+    │   │   └── ODIR-5K_training(English).xlsx
+    │   └── Images/
+    ├── Off-site Test Set/
+    │   ├── Annotation/
+    │   │   └── ODIR-5K_Offsite(English).xlsx
+    │   └── Images/
+    └── On-site Test Set/
+        ├── Annotation/
+        │   └── ODIR-5K_Onsite(English).xlsx
+        └── Images/
+```
+
+**Step 5.2 — Run the provided merge script** to consolidate all subsets into a single folder:
+
+```bash
+python merge_dataset.py
+```
+
+This script will:
+
+1. Copy all 10,000 fundus images from the three subsets into one `OIA-ODIR-Merged/Images/` folder.
+2. Load each subset's English annotation file (`.xlsx`) and merge them into one unified annotation file.
+3. Add a `dataset` column to the merged CSV indicating the origin subset (Training / On-site / Off-site) so provenance is preserved.
+4. Produce both `all_annotations.xlsx` and `all_annotations.csv` (CSV is used by the benchmark code).
+
+
+After the merge, the layout will be:
 
 ```
 Final_Project/OIA-ODIR-Merged/
-├── all_annotations.csv
-└── Images/
+├── all_annotations.csv        # Merged annotations used by the pipeline
+├── all_annotations.xlsx       # Same data in Excel format
+├── train_annotations.xlsx     # 80% split (optional use)
+├── test_annotations.xlsx      # 20% split (optional use)
+└── Images/                    # All 10,000 fundus images
     ├── 937_left.jpg
     ├── 937_right.jpg
     └── ...
 ```
 
-The `all_annotations.csv` file must contain at least the following columns: `ID`, `Patient Age`, `Patient Sex`, `Left-Fundus`, `Right-Fundus`, `Left-Diagnostic Keywords`, `Right-Diagnostic Keywords`, and the eight binary disease labels (`N`, `D`, `G`, `C`, `A`, `H`, `M`, `O`).
+The merged CSV contains the following columns:
+
+- `ID` — Patient identifier
+- `Patient Age` — Age in years
+- `Patient Sex` — Male / Female
+- `Left-Fundus` — Filename of the left fundus image
+- `Right-Fundus` — Filename of the right fundus image
+- `Left-Diagnostic Keywords` — Free-text clinical keywords for the left eye
+- `Right-Diagnostic Keywords` — Free-text clinical keywords for the right eye
+- `N`, `D`, `G`, `C`, `A`, `H`, `M`, `O` — Eight binary disease labels
+- `dataset` — Origin subset (`Training`, `On-site`, or `Off-site`)
 
 ---
 
@@ -173,14 +223,13 @@ The outputs are written to `results/visualizations/`.
 ```
 Final_Project/
 ├── README.md                       # This file
-├── FINAL_REPORT.md                 # Final report (Markdown source)
-├── FINAL_REPORT.tex                # Final report (LaTeX / Overleaf source)
 ├── requirements.txt                # Python dependencies
 ├── config.py                       # Global configuration (models, paths, thresholds)
 ├── .env.example                    # API key template
 ├── .env                            # Local API key (gitignored)
 ├── .gitignore                      # Git exclusions
 │
+├── merge_dataset.py                # Merge official OIA-ODIR subsets into unified dataset
 ├── run.py                          # Single-patient entry point
 ├── run_benchmark.py                # Multi-patient benchmark runner
 ├── test_models.py                  # Verify which models are accessible
@@ -203,7 +252,7 @@ Final_Project/
 │   ├── predictions_*.csv           # Individual patient predictions
 │   └── visualizations/             # Generated charts
 │
-└── OIA-ODIR-Merged/                # Dataset (not tracked in git, download separately)
+└── OIA-ODIR-Merged/                # Dataset (not tracked in git, built via merge_dataset.py)
     ├── all_annotations.csv
     └── Images/
 ```
@@ -236,12 +285,12 @@ Final_Project/
 
 **Preprocessing steps:**
 
-1. CSV annotations are loaded with pandas.
-2. The binary DR label is extracted directly from the `D` column.
-3. Fundus images are read from disk and encoded as base64 data URLs (MIME type `image/jpeg`).
-4. Left and right clinical keywords are concatenated for the NLP agent.
-5. Stratified sampling is applied: 100 DR-positive and 100 DR-negative patients for evaluation.
-6. A fixed random seed (42) is used for reproducibility.
+1. **Dataset consolidation** — The official OIA-ODIR distribution is split into three subsets (Training Set, On-site Test Set, Off-site Test Set). The provided `merge_dataset.py` script combines all images into a single `Images/` folder and all English annotation files into a single unified CSV (`all_annotations.csv`) and Excel file (`all_annotations.xlsx`). A `dataset` column records each patient's origin subset.
+2. **CSV loading** — The unified annotation file is loaded with pandas and validated for the required columns.
+3. **Ground-truth extraction** — The binary DR label is read directly from the `D` column (`1` = DR present, `0` = no DR).
+4. **Image encoding** — Each fundus image is read from disk and encoded as a base64 data URL (MIME type `image/jpeg`) for transmission to vision-language models via the OpenAI-compatible multimodal message format. No resizing or normalization is applied — each LLM handles its own preprocessing internally.
+5. **Text preparation** — The left and right clinical keyword fields are concatenated with a space separator; empty strings are replaced with a placeholder.
+6. **Stratified sampling** — For evaluation, 100 DR-positive and 100 DR-negative patients are drawn using a fixed random seed (42) for reproducibility. This ensures non-degenerate precision and recall estimates despite the natural class imbalance in OIA-ODIR.
 
 **Why OIA-ODIR:** Unlike DDR (images only) or Pima Indians (tabular only), OIA-ODIR provides all modalities for the same patient, which eliminates the unpaired-dataset limitation identified in our mid-project report.
 
@@ -354,7 +403,7 @@ The GitHub repository:
 
 - Contains the same version as the submitted `.zip` file.
 - Includes a complete commit history demonstrating development progress.
-- Is publicly accessible (or access has been granted to the instructor).
+- Is publicly accessible.
 
 ---
 
@@ -362,7 +411,8 @@ The GitHub repository:
 
 ```
 Alshehhi, S. M., Al Hayyas, M. A., Alnuaimi, F. M. (2026).
-Multimodal Agentic AI for Diabetic Retinopathy Screening: Benchmarking Closed-Source and Open-Weight Vision-Language Models
+Multimodal Agentic AI for Diabetic Retinopathy Screening: Benchmarking
+Closed-Source and Open-Weight Vision-Language Models.
 ITPG 708 Final Project, United Arab Emirates University, Spring 2026.
 ```
 
