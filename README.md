@@ -1,4 +1,4 @@
-# Multimodal Diabetes Screening Using Hybrid AI Models and Agent-Based Decision
+# Multimodal Agentic AI for Diabetic Retinopathy Screening: Benchmarking Closed-Source and Open-Weight Vision-Language Model
 
 **ITPG 708 Final Project – Spring 2026 | United Arab Emirates University**
 
@@ -348,7 +348,7 @@ Ground Truth D (DR): 1
 
 ## GitHub Repository
 
-**Repository Link:** https://github.com/<your-username>/itpg708-diabetes-screening
+**Repository Link:** https://github.com/SaeedAlshehhi-UAEU/itpg708-diabetes-screening
 
 The GitHub repository:
 
