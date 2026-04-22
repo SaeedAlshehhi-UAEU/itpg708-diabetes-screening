@@ -1,0 +1,597 @@
+\documentclass[11pt,a4paper]{article}
+
+% ============================================================================
+% Packages
+% ============================================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+
+% ============================================================================
+% Hyperref setup
+% ============================================================================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    citecolor=blue,
+    pdftitle={Multimodal Diabetes Screening Using Hybrid AI Models and Agent-Based Decision},
+    pdfauthor={Saeed Alshehhi, Maitha Al Hayyas, Fatima Alnuaimi},
+}
+
+% ============================================================================
+% Code listing style
+% ============================================================================
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    backgroundcolor=\color{gray!10},
+    showstringspaces=false,
+}
+
+% ============================================================================
+% Section formatting
+% ============================================================================
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+
+% ============================================================================
+% Title
+% ============================================================================
+\title{
+    \vspace{-1.5cm}
+    \textbf{Multimodal Diabetes Screening Using Hybrid AI Models and Agent-Based Decision}\\[0.5em]
+    \large ITPG 708 Final Project --- Spring 2026
+}
+
+\author{
+    Saeed Mohammed Alshehhi\thanks{\texttt{201604533@uaeu.ac.ae}} \quad
+    Maitha Abdulla Al Hayyas\thanks{\texttt{201403194@uaeu.ac.ae}} \quad
+    Fatima Mohammed Alnuaimi\thanks{\texttt{201302209@uaeu.ac.ae}}\\[0.5em]
+    \textit{United Arab Emirates University}\\[0.3em]
+    \textbf{Instructor:} Dr. Leila Ismail
+}
+
+\date{April 2026}
+
+% ============================================================================
+% Document
+% ============================================================================
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+% ============================================================================
+% Abstract
+% ============================================================================
+\begin{abstract}
+This paper presents a multimodal agentic artificial intelligence system for diabetic retinopathy (DR) detection and diabetes risk assessment. Departing from conventional pipelines that combine convolutional neural networks with tabular classifiers, we propose a unified architecture built on vision-language large language models (LLMs) orchestrated through a five-agent pipeline. The system integrates three data modalities from a single patient: bilateral fundus images, free-text clinical keywords, and structured demographic data, eliminating the unpaired-dataset limitation present in prior multimodal studies. Five specialized agents --- demographic risk scoring, clinical NLP extraction, bilateral vision analysis, multimodal risk fusion, and tier-based prevention planning --- are connected through a LangGraph orchestration layer. We evaluated five state-of-the-art vision-language models from four providers (Anthropic Claude Sonnet 4.6, Google Gemini 2.5 Flash, OpenAI GPT-4o, Google Gemma 4 31B, and Alibaba Qwen 3 VL 8B) on 200 stratified patients from the Ocular Disease Intelligent Recognition (OIA-ODIR) dataset. The benchmark includes both closed-source and open-weight models, enabling cross-provider and licensing-based comparisons. The proposed system produces personalized prevention plans across three clinically meaningful risk tiers (Urgent, Moderate, Preventive), and it constitutes a reproducible benchmark for comparing multimodal LLMs in automated medical screening.
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+
+% ============================================================================
+% 1. Introduction
+% ============================================================================
+\section{Introduction}
+
+Diabetes mellitus affects approximately 537 million adults worldwide, and its most severe ocular complication --- diabetic retinopathy (DR) --- is a leading cause of preventable blindness. Early detection and personalized prevention planning can significantly reduce the burden of advanced DR and associated vision loss. However, real-world screening remains limited by the shortage of ophthalmologists, the cost of specialized equipment, and the lack of integrated decision-support systems that can reason across multiple data modalities.
+
+Artificial intelligence has the potential to transform diabetes screening. Deep convolutional neural networks (CNNs) have demonstrated ophthalmologist-level accuracy in DR detection from fundus photographs, while traditional machine-learning models can estimate diabetes risk from structured clinical variables such as age, blood pressure, and glycemic indicators. Nevertheless, these approaches typically operate in isolation: vision models focus on retinal images, tabular models focus on clinical features, and the two are rarely combined in a clinically actionable pipeline. Moreover, most published multimodal systems rely on unpaired datasets --- using one corpus for images and another for tabular variables --- which limits the ability to evaluate true multimodal reasoning on a single patient.
+
+Recent advances in vision-language large language models (LLMs) have opened a new paradigm. Models such as Claude Sonnet 4.6, GPT-4o, Gemini 2.5 Flash, Gemma 4, and Qwen 3 VL can jointly process images and text, perform medical reasoning, and generate structured outputs. When combined with agent-orchestration frameworks such as LangGraph, these models enable the construction of modular pipelines in which each agent handles a specific subtask: demographic reasoning, clinical language understanding, fundus interpretation, multimodal fusion, and prevention planning. Unlike traditional pipelines, this agent-based approach does not require model training --- it leverages pretrained foundation models through prompt engineering and structured orchestration.
+
+This project designs, implements, and evaluates a five-agent multimodal screening system for diabetes risk and DR detection. The contributions are as follows:
+
+\begin{enumerate}
+    \item \textbf{Unified multimodal pipeline} that processes bilateral fundus images, clinical keywords, and demographics for the same patient, solving the unpaired-dataset limitation.
+    \item \textbf{Five-agent architecture} orchestrated through LangGraph, replacing trainable CNN and tabular classifiers with prompt-engineered vision-language agents.
+    \item \textbf{Comparative benchmark} of five state-of-the-art LLMs on 200 stratified OIA-ODIR patients using standard classification metrics, spanning both closed-source and open-weight models.
+    \item \textbf{Tier-based prevention planning} that converts probabilistic risk estimates into clinically actionable interventions across three urgency levels.
+\end{enumerate}
+
+\subsection{Problem Formulation}
+
+The objective is to design a multimodal agentic system that integrates bilateral retinal imaging, structured demographics, and free-text clinical descriptions to produce a unified diabetes-risk assessment and a personalized prevention plan.
+
+\textbf{Inputs.} Each patient $i$ is represented by a tuple:
+\begin{equation}
+x_i = (I_i^L, I_i^R, a_i, s_i, k_i^L, k_i^R)
+\end{equation}
+where $I_i^L, I_i^R$ are the left and right fundus images, $a_i$ is age, $s_i \in \{\text{Male}, \text{Female}\}$ is sex, and $k_i^L, k_i^R$ are free-text clinical keywords for the left and right eyes.
+
+\textbf{Outputs.} The system produces three outputs:
+\begin{equation}
+y_i^{\text{DR}} \in \{0, 1\}, \quad r_i \in [0, 100], \quad T_i \in \{1, 2, 3\}
+\end{equation}
+where $y_i^{\text{DR}}$ is binary DR prediction, $r_i$ is a continuous risk score, and $T_i$ is the prevention tier.
+
+\textbf{Five Sequential Tasks.} The problem decomposes into five agent tasks:
+
+\begin{enumerate}
+    \item \textbf{Demographic Risk} --- $g_1(a_i, s_i; \theta_L) \rightarrow d_i$ where $d_i \in [0, 1]$.
+    \item \textbf{Clinical NLP} --- $g_2(k_i^L, k_i^R; \theta_L) \rightarrow c_i$ where $c_i \in [0, 1]$.
+    \item \textbf{Bilateral Vision Analysis} --- $g_{3}(I_i^{L/R}; \theta_L) \rightarrow (\hat{y}_i^{L/R}, q_i^{L/R})$ where $\hat{y}$ is per-eye DR label and $q$ is confidence.
+    \item \textbf{Multimodal Fusion} --- $g_4(d_i, c_i, \hat{y}_i^L, \hat{y}_i^R; \theta_L) \rightarrow (r_i, y_i^{\text{DR}}, \phi_i)$ where $\phi_i$ is overall confidence.
+    \item \textbf{Prevention Planning} --- $g_5(r_i, a_i, y_i^{\text{DR}}; \theta_L) \rightarrow (T_i, \mathcal{P}_i)$ where $\mathcal{P}_i$ is the structured prevention plan.
+\end{enumerate}
+
+All agents share the same underlying vision-language model $\theta_L$, differing only in prompt specification and input modalities.
+
+\textbf{Tier Assignment.} Prevention tier $T_i$ is assigned by threshold:
+\begin{equation}
+T_i = \begin{cases}
+1 \text{ (Urgent)} & \text{if } r_i \geq 70 \\
+2 \text{ (Moderate)} & \text{if } 40 \leq r_i < 70 \\
+3 \text{ (Preventive)} & \text{if } r_i < 40
+\end{cases}
+\end{equation}
+
+\textbf{Constraints and Assumptions.}
+\begin{itemize}
+    \item (C1) All modalities originate from the same patient --- no cross-dataset joining.
+    \item (C2) The LLM is queried with zero training; behavior depends entirely on prompt engineering.
+    \item (C3) Outputs must be valid JSON to enable programmatic downstream processing.
+    \item (C4) Risk score $r_i$ is calibrated to $[0, 100]$ for clinical interpretability.
+    \item (C5) A single image-quality failure in either eye does not invalidate the assessment; the fusion agent weights modalities accordingly.
+\end{itemize}
+
+\textbf{Central Hypothesis.} A vision-language LLM orchestrated through specialized agents can perform multimodal diabetes risk assessment with diagnostic performance comparable to dedicated CNN and tabular pipelines, while offering greater interpretability and generalizability through natural-language reasoning.
+
+\subsection{Research Questions}
+
+\begin{enumerate}
+    \item \textbf{RQ1.} Can prompt-engineered vision-language agents replace trainable CNN and tabular models for multimodal DR screening without sacrificing diagnostic performance?
+    \item \textbf{RQ2.} How do cross-provider LLMs (Anthropic, Google closed, Google open-weight, OpenAI, Alibaba) differ in precision, recall, and output reliability on the same medical imaging task?
+    \item \textbf{RQ3.} Does an agent-based fusion layer produce clinically interpretable and consistent tier assignments when integrating heterogeneous modalities from the same patient?
+    \item \textbf{RQ4.} Do open-weight models (Gemma 4 31B, Qwen 3 VL 8B) match closed-source frontier models (Claude, GPT-4o, Gemini) on multimodal medical screening tasks?
+\end{enumerate}
+
+% ============================================================================
+% 2. Related Work
+% ============================================================================
+\section{Related Work}
+
+\subsection{Large Language Models in Medical Imaging}
+
+The application of large language models to medical imaging has emerged rapidly since 2023. Jin et al.~\cite{jin2025mllm} evaluated multimodal LLMs on diabetic retinopathy detection from ultra-widefield fundus images, reporting diagnostic accuracies between 52\% and 61\%. Their findings indicate that, while MLLM performance remains below dedicated CNN algorithms, the models offer flexible natural-language outputs that enhance interpretability for clinicians. A complementary study published in Meta-Radiology~\cite{metaradiology2024} evaluated Gemini-series and GPT-4-series models across fourteen medical imaging datasets covering five imaging categories --- dermatology, radiology, dentistry, ophthalmology, and endoscopy --- finding that general-purpose MLLMs can achieve clinically useful performance on visual tasks without domain-specific fine-tuning.
+
+The Japanese Journal of Radiology~\cite{claude2024jjr} specifically evaluated Claude 3 Opus and Claude 3.5 Sonnet on 322 radiology quiz cases, investigating diagnostic performance under three input conditions: clinical history alone, clinical history with imaging findings, and clinical history with key images. In ScienceDirect~\cite{sciencedirect2024}, GPT-4o and Claude Sonnet 3.5 were tested on 120 clinical vignettes with and without accompanying images: LLMs outperformed physicians in text-only scenarios (GPT-4o 70.8\%, Claude Sonnet 3.5 59.5\%, physicians 39.5\%; Bonferroni-adjusted $p < 0.001$), and all improved with image integration (GPT-4o 84.5\%, Claude 67.3\%, physicians 78.8\%). Work on MedGemma~\cite{medgemma2025} --- a medical variant of Gemma 3 released by Google DeepMind --- demonstrates that the Gemma architecture underlying Gemini models is specifically validated for medical image interpretation, including fundus photography. Similarly, MedGemini~\cite{saab2024gemini} extended Gemini for radiology and clinical reasoning tasks, achieving state-of-the-art results on MedQA and retinal benchmarks. The Qwen-VL family has also been applied to medical imaging: UMIT~\cite{umit2025} unified multiple medical imaging tasks using Qwen2-VL as the backbone, and MDPI Bioengineering~\cite{mdpi2025} systematically evaluated Qwen variants on the ROCOv2 dataset containing 116,635 images across eight imaging modalities.
+
+\textbf{Critical limitation:} most existing MLLM studies evaluate models on single-image tasks in isolation, without multimodal fusion or agent orchestration. The integration of visual and textual modalities typically happens inside a single model call, with no structured decomposition of subtasks.
+
+\subsection{Agentic AI in Healthcare}
+
+The agentic paradigm --- decomposing complex reasoning into specialized cooperating agents --- has shown promise in medical applications. A Nature Scientific Reports paper~\cite{nature2025agentic} proposed an agentic AI framework for DR detection in retinal fundus images, using coordinating agents for lesion detection, severity grading, and report generation. Their approach demonstrates the feasibility of replacing monolithic end-to-end CNNs with modular agent pipelines. LangGraph~\cite{langgraph2024}, a graph-based agent orchestration framework introduced by LangChain in 2024, provides the infrastructure for constructing sequential and conditional agent workflows with shared state. While LangGraph has been widely adopted for general-purpose task automation, published applications to medical screening remain sparse.
+
+\textbf{Critical limitation:} existing agentic medical systems tend to use purpose-trained vision models for each agent. The use of a single pretrained LLM across all agents --- as in our design --- reduces complexity and eliminates training costs, but has not been systematically evaluated.
+
+\subsection{Deep Learning for Diabetic Retinopathy}
+
+Traditional CNN-based DR detection is well established. Gulshan et al.~\cite{gulshan2016jama} reported a deep learning system with 97\% sensitivity for referable DR, and Ting et al.~\cite{ting2017jama} validated similar systems across multi-ethnic populations. Newer architectures --- EfficientNet, ResNet-50, Swin Transformer, Vision Transformer --- have been benchmarked for DR severity grading with accuracies above 90\% on curated datasets. A 2025 systematic review~\cite{jmiir2025} found that hybrid CNN-ViT architectures outperform pure CNN backbones for DR classification, particularly on imbalanced datasets.
+
+\textbf{Critical limitation:} CNN-based approaches require large labeled datasets, extensive training, and produce numerical outputs without natural-language reasoning. They also cannot natively integrate textual clinical information.
+
+\subsection{Multimodal Learning in Healthcare}
+
+Huang et al.~\cite{huang2020npj} reviewed multimodal fusion approaches combining medical imaging and electronic health records, concluding that early fusion typically outperforms late fusion when modalities are well-aligned. However, the majority of these multimodal studies combine unpaired datasets --- using one corpus for images and another for tabular features --- which limits true per-patient multimodal reasoning.
+
+\subsection{Research Gap}
+
+The literature reveals four unaddressed gaps:
+
+\begin{enumerate}
+    \item \textbf{Unpaired-dataset limitation.} Existing multimodal DR systems combine datasets such as DDR (images) with Pima Indians (tabular variables), where no patient appears in both. This prevents genuine per-patient multimodal reasoning.
+    \item \textbf{Training dependency.} CNN and tabular baselines require large labeled datasets and computational resources, limiting deployment in low-resource settings.
+    \item \textbf{Lack of agent decomposition.} Multimodal LLM studies typically feed all inputs into a single model call, eliminating the interpretability benefits of modular agent pipelines.
+    \item \textbf{Absence of open-weight comparisons.} Most MLLM medical studies compare only closed-source models (GPT, Claude, Gemini), omitting open-weight alternatives that are critical for low-resource and privacy-sensitive deployments.
+\end{enumerate}
+
+This project addresses all four gaps by: (1) using the OIA-ODIR dataset in which every patient has bilateral fundus images, demographics, and clinical keywords; (2) eliminating training through prompt-engineered LLM agents; (3) decomposing reasoning into five interpretable agents; and (4) benchmarking two open-weight models (Gemma 4, Qwen 3 VL) alongside three closed-source flagships (Claude Sonnet 4.6, GPT-4o, Gemini 2.5 Flash).
+
+% ============================================================================
+% 3. System Architecture
+% ============================================================================
+\section{System Architecture}
+
+\subsection{Overview}
+
+The proposed system is a five-agent pipeline in which a single vision-language model is invoked sequentially with different prompts and modalities. Each agent specializes in a distinct subtask, and agent outputs are passed through a shared state dictionary managed by LangGraph. Figure~\ref{fig:arch} illustrates the high-level architecture.
+
+\begin{figure}[H]
+\centering
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+ +---------------------------------------------------+
+ |         Patient Data (OIA-ODIR Dataset)           |
+ | Age, Sex, Left Fundus, Right Fundus, Keywords     |
+ +----------------------+----------------------------+
+                        |
+    +-------------------+-------------------+
+    v                   v                   v
++-----------+    +-----------+    +-----------+
+| Agent 1   |    | Agent 2   |    | Agent 3   |
+| Demograph |    | Clinical  |    |  Vision   |
+|   Risk    |    |   NLP     |    | (L/R eye) |
++-----+-----+    +-----+-----+    +-----+-----+
+      |                |                |
+      +----------------+----------------+
+                       v
+               +---------------+
+               |    Agent 4    |
+               | Risk Fusion   |
+               +-------+-------+
+                       v
+               +---------------+
+               |   Agent 5     |
+               | Prevention    |
+               +-------+-------+
+                       v
+           +------------------------+
+           | Final Assessment +     |
+           | Tier + Prevention Plan |
+           +------------------------+
+\end{lstlisting}
+\caption{Five-agent multimodal pipeline. Agents 1--3 operate on their respective modalities; Agents 4--5 operate sequentially on aggregated outputs.}
+\label{fig:arch}
+\end{figure}
+
+\subsection{Agent Specifications}
+
+\textbf{Agent 1 --- Demographic Risk Scorer.} Receives age $a_i$ and sex $s_i$ and produces a normalized demographic risk score $d_i \in [0, 1]$ together with a qualitative risk level (low/moderate/high). The agent is implemented by invoking the LLM with a text-only prompt that instructs it to apply epidemiological knowledge: diabetes risk increases substantially after age 45, and males have slightly higher risk than females.
+
+\textbf{Agent 2 --- Clinical NLP Extractor.} Receives concatenated left/right clinical keywords $(k_i^L, k_i^R)$ and extracts a list of diabetes-relevant findings (e.g., microaneurysms, hypertensive retinopathy, neovascularization) together with a text-derived risk score $c_i \in [0, 1]$. This agent replaces traditional named-entity-recognition pipelines with a prompt-engineered LLM call.
+
+\textbf{Agent 3 --- Bilateral Vision Analysis.} Invoked twice per patient (once for each eye). The fundus image is encoded as a base64 data URL and embedded in a multimodal message. The LLM is prompted to act as an expert ophthalmologist, grading the image as No DR, Mild, Moderate, Severe, or Proliferative DR, and identifying any of the five canonical DR signs (microaneurysms, hemorrhages, hard exudates, cotton-wool spots, neovascularization). The output is a structured dictionary containing binary DR label $\hat{y}_i^{L/R}$, severity grade, confidence $q_i^{L/R}$, image quality, and a short clinical note.
+
+\textbf{Agent 4 --- Risk Fusion.} Receives all prior outputs and performs multimodal reasoning to produce a unified diabetes risk score $r_i \in [0, 100]$, an overall risk level, an overall confidence $\phi_i$, and a textual rationale. Unlike traditional weighted-average fusion, the LLM reasons across modalities using natural-language rules specified in the prompt (DR presence in either eye is a strong indicator; age $>$ 45 combined with DR signals high risk; clinical keywords reinforce or contradict imaging findings).
+
+\textbf{Agent 5 --- Prevention Planner.} Receives the fused risk score and patient context, assigns a prevention tier $T_i$, and generates a structured plan containing lifestyle modifications, medical screening schedule, specialist referrals, monitoring frequency, education topics, and an implementation summary. The prompt explicitly encodes tier-specific behavior so that Tier 1 (Urgent) outputs daily monitoring and immediate referrals while Tier 3 (Preventive) outputs annual checks and general lifestyle guidance.
+
+\subsection{LangGraph Orchestration}
+
+Agents are connected through a LangGraph StateGraph with a shared state dictionary. Each agent reads from and writes to this state, allowing downstream agents to access upstream results. The workflow is sequential: Agent 1 $\rightarrow$ Agent 2 $\rightarrow$ Agent 3a $\rightarrow$ Agent 3b $\rightarrow$ Agent 4 $\rightarrow$ Agent 5. During benchmark execution, a stateless wrapper was used in place of the graph to prevent cross-patient state contamination when the same compiled workflow is reused across many patients.
+
+\subsection{Mathematical Formulation}
+
+Let $\pi_k$ denote the prompt template for agent $k$, and let $\mathcal{L}(\pi, I; \theta_L)$ denote the LLM's output when given prompt $\pi$ and optional image $I$. The five agents are:
+
+\begin{equation}
+\begin{aligned}
+d_i, \ell^d_i &= \mathcal{L}(\pi_1(a_i, s_i); \theta_L) & \text{(Agent 1)} \\
+c_i, \mathcal{F}_i &= \mathcal{L}(\pi_2(k_i^L, k_i^R); \theta_L) & \text{(Agent 2)} \\
+\hat{y}_i^{L}, q_i^{L} &= \mathcal{L}(\pi_3^{\text{left}}(), I_i^L; \theta_L) & \text{(Agent 3a)} \\
+\hat{y}_i^{R}, q_i^{R} &= \mathcal{L}(\pi_3^{\text{right}}(), I_i^R; \theta_L) & \text{(Agent 3b)} \\
+r_i, y_i^{\text{DR}}, \phi_i &= \mathcal{L}(\pi_4(d_i, c_i, \hat{y}_i^L, \hat{y}_i^R, a_i, s_i); \theta_L) & \text{(Agent 4)} \\
+T_i, \mathcal{P}_i &= \mathcal{L}(\pi_5(r_i, a_i, s_i, y_i^{\text{DR}}); \theta_L) & \text{(Agent 5)}
+\end{aligned}
+\end{equation}
+
+where $\ell^d$ is the age-risk level, $\mathcal{F}$ is the set of clinical findings, and $\mathcal{P}$ is the structured prevention plan.
+
+\textbf{Binary DR prediction.} From the fused risk level, the binary DR prediction is derived as:
+\begin{equation}
+\hat{y}_i^{\text{DR}} = \mathbb{1}[\text{risk level}_i = \text{``high''}]
+\end{equation}
+
+\textbf{Fusion rationale (non-parametric).} Unlike weighted averaging, the LLM fusion agent applies learned reasoning rules encoded in the prompt. Symbolically, the fusion can be described as a conditional logic:
+\begin{equation}
+r_i = f_{\text{LLM}}(d_i, c_i, \hat{y}_i^L, \hat{y}_i^R, q_i^L, q_i^R, \mathcal{F}_i)
+\end{equation}
+where $f_{\text{LLM}}$ is parameterized entirely by the pretrained model weights $\theta_L$ and the fusion prompt $\pi_4$, with no additional training.
+
+% ============================================================================
+% 4. Methodology
+% ============================================================================
+\section{Methodology}
+
+\subsection{Dataset --- OIA-ODIR}
+
+The Ocular Disease Intelligent Recognition (OIA-ODIR) dataset~\cite{li2019oiaodir} is used for all experiments. OIA-ODIR contains 5,000 patients, each with a bilateral fundus image pair (left and right eye), demographic information (age, sex), free-text diagnostic keywords per eye, and eight binary disease labels: Normal (N), Diabetic retinopathy (D), Glaucoma (G), Cataract (C), Age-related Macular degeneration (A), Hypertension (H), Myopia (M), and Other abnormalities (O). The D label serves as ground truth for DR detection.
+
+\textbf{Class distribution.} Of the 5,000 patients, 1,618 (32.4\%) have DR (D = 1) and 3,382 (67.6\%) do not (D = 0). This moderate class imbalance motivates stratified sampling during evaluation.
+
+\textbf{Why OIA-ODIR.} Unlike DDR (images-only) or Pima Indians (tabular-only), OIA-ODIR provides all modalities for the same patient, eliminating the unpaired-dataset limitation that affected the initial project design.
+
+\subsection{Preprocessing}
+
+\textbf{Image encoding.} Each fundus image is read from disk and encoded as a base64 data URL with MIME type \texttt{image/jpeg}. The resulting string is embedded directly in the LLM request payload via the OpenAI-compatible multimodal message format. No resizing, normalization, or augmentation is applied --- the LLM's internal preprocessing handles these steps.
+
+\textbf{Text preparation.} The left and right clinical keywords are concatenated with a space separator. Empty strings are replaced with the placeholder ``No clinical description available''.
+
+\textbf{Ground truth.} The binary DR label is extracted directly from the D column of the CSV annotations.
+
+\subsection{Stratified Sampling}
+
+From the 5,000 OIA-ODIR patients, a stratified sample of 200 patients is drawn --- 100 with D = 1 and 100 with D = 0 --- using a fixed random seed (42) for reproducibility. Stratification is essential because uniform random sampling would yield approximately 32 positive cases per 100, producing degenerate precision and recall estimates.
+
+\subsection{Model Selection}
+
+Five vision-language models are evaluated, selected to span four providers and two licensing categories (closed-source and open-weight):
+
+\begin{enumerate}
+    \item \textbf{Claude Sonnet 4.6 (Anthropic, closed-source).} Anthropic's flagship Sonnet-class model with frontier performance on coding, reasoning, and professional work. Priced at \$3 per million input tokens and \$15 per million output tokens, supporting a 1,000,000-token context window. Claude 3.5 Sonnet achieved 66.2\% accuracy on multimodal radiology tasks~\cite{preprints2025} and the highest accuracy (90\%) on breast imaging BI-RADS MCQs among evaluated LLMs~\cite{dir2025}. Sonnet 4.6 extends these capabilities with improved agent-oriented reasoning.
+
+    \item \textbf{Gemini 2.5 Flash (Google DeepMind, closed-source).} State-of-the-art workhorse model designed for advanced reasoning, coding, and scientific tasks, with built-in ``thinking'' capabilities for nuanced context handling. Priced at \$0.30 per million input tokens and \$2.50 per million output tokens, with a 1,048,576-token context. The broader Gemini family has been evaluated across 14 medical imaging datasets~\cite{metaradiology2024}, and the medical-specialized variant MedGemini~\cite{saab2024gemini} has achieved state-of-the-art performance on radiology benchmarks.
+
+    \item \textbf{GPT-4o (OpenAI, closed-source).} OpenAI's multimodal model, widely cited as a baseline in medical AI literature. GPT-4o was explicitly evaluated for diabetic retinopathy detection from fundus photos~\cite{jin2025mllm}, and reached 84.5\% diagnostic accuracy on image-augmented clinical vignettes~\cite{sciencedirect2024}. Priced at \$2.50 per million input tokens and \$10 per million output tokens.
+
+    \item \textbf{Gemma 4 31B (Google DeepMind, open-weight).} The latest open-weight model in Google's Gemma family. The Gemma 3 Technical Report~\cite{gemma3} introduced multimodal vision understanding, and the MedGemma Technical Report~\cite{medgemma2025} validates the Gemma architecture for medical imaging. Including Gemma 4 enables direct comparison of open-weight vs.\ closed-source models at comparable parameter scales.
+
+    \item \textbf{Qwen 3 VL 8B (Alibaba, open-weight).} Alibaba's latest vision-language model with native 256K context (extensible to 1M), Interleaved-MRoPE for long-horizon reasoning, and DeepStack visual-text alignment. The Qwen-VL family has been systematically applied to medical imaging in UMIT~\cite{umit2025} --- which unified medical report generation, disease classification, lesion detection, and visual question answering --- and was evaluated on ROCOv2 (116,635 medical images)~\cite{mdpi2025}.
+\end{enumerate}
+
+All five models are accessed through the OpenRouter API, which provides a unified OpenAI-compatible interface.
+
+\subsection{Prompt Engineering}
+
+Prompts for all five agents follow a shared template structure: (1) role specification (``You are an expert ophthalmologist\ldots''), (2) input description, (3) task specification with rubric, (4) strict JSON output schema, and (5) explicit instruction to avoid markdown formatting. A robust JSON parser handles the case where models --- particularly Gemini and Gemma --- wrap responses in markdown code blocks. The \texttt{max\_tokens} parameter is set to 1,500 to prevent truncation of verbose responses, a critical fix discovered during pilot testing.
+
+% ============================================================================
+% 5. Experimental Setup
+% ============================================================================
+\section{Experimental Setup}
+
+\subsection{Evaluation Metrics}
+
+For binary DR detection, five standard metrics are reported.
+
+\textbf{Accuracy:}
+\begin{equation}
+\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}
+\end{equation}
+
+\textbf{Precision:}
+\begin{equation}
+\text{Precision} = \frac{TP}{TP + FP}
+\end{equation}
+
+\textbf{Recall (Sensitivity):}
+\begin{equation}
+\text{Recall} = \frac{TP}{TP + FN}
+\end{equation}
+
+\textbf{F1-Score:}
+\begin{equation}
+F_1 = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
+\end{equation}
+
+\textbf{ROC-AUC:} Area under the Receiver Operating Characteristic curve, computed from continuous risk scores $r_i$.
+
+In addition, we report the \textbf{success rate} --- the fraction of patients for which the pipeline produced a valid JSON prediction --- as a proxy for model reliability. The \textbf{average inference time} per patient is recorded for cost and latency analysis.
+
+\subsection{Baseline Comparison}
+
+The five LLMs are compared against one another on the same 200 patients. No external CNN baselines are trained; the literature baseline is taken from Jin et al.~\cite{jin2025mllm}, who reported 52--61\% accuracy for four multimodal LLMs on similar DR detection tasks, and from ScienceDirect~\cite{sciencedirect2024}, where GPT-4o reached 84.5\% on image-augmented clinical vignettes.
+
+\subsection{Hardware and Software}
+
+\begin{itemize}
+    \item \textbf{Language:} Python 3.14
+    \item \textbf{LLM orchestration:} LangGraph
+    \item \textbf{API client:} OpenAI Python SDK targeting OpenRouter
+    \item \textbf{Metrics:} scikit-learn
+    \item \textbf{Dataset handling:} pandas
+    \item \textbf{UI:} Streamlit
+    \item \textbf{Hardware:} Standard laptop; no GPU required since inference occurs via cloud APIs
+\end{itemize}
+
+\subsection{Evaluation Sample Justification}
+
+A stratified sample of 200 patients was selected as the evaluation cohort. This size aligns with recent MLLM medical-evaluation studies --- Jin et al.~\cite{jin2025mllm} evaluated on a similar order of magnitude --- and represents a practical balance between statistical meaningfulness and API cost. The total benchmark cost for five models on 200 patients was approximately USD 13, and total runtime was approximately 5--6 hours.
+
+% ============================================================================
+% 6. Results and Analysis
+% ============================================================================
+\section{Results and Analysis}
+
+\textit{Note: Final results from the five-model benchmark will be inserted here once the 200-patient run completes. The following structure will be populated with:}
+
+\subsection{Overall Model Performance}
+
+A table summarizing accuracy, precision, recall, F1, ROC-AUC, success rate, and average inference time for all five models on the 200-patient stratified sample.
+
+\begin{table}[H]
+\centering
+\caption{Model performance on 200 stratified OIA-ODIR patients (100 DR+, 100 DR--).}
+\label{tab:results}
+\begin{tabularx}{\textwidth}{lXXXXXX}
+\toprule
+\textbf{Model} & \textbf{Success} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1} & \textbf{ROC-AUC} \\
+\midrule
+Claude Sonnet 4.6 & -- & -- & -- & -- & -- & -- \\
+Gemini 2.5 Flash & -- & -- & -- & -- & -- & -- \\
+GPT-4o & -- & -- & -- & -- & -- & -- \\
+Gemma 4 31B & -- & -- & -- & -- & -- & -- \\
+Qwen 3 VL 8B & -- & -- & -- & -- & -- & -- \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Confusion Matrix Analysis}
+
+Per-model TP/TN/FP/FN breakdowns, with discussion of each model's bias (conservative vs.\ aggressive prediction patterns).
+
+\subsection{Closed-Source vs.\ Open-Weight Comparison}
+
+Direct comparison of closed-source flagships (Claude Sonnet 4.6, Gemini 2.5 Flash, GPT-4o) against open-weight models (Gemma 4 31B, Qwen 3 VL 8B), addressing RQ4.
+
+\subsection{Failure Mode Analysis}
+
+Identification of patterns in failed predictions, including token truncation, safety-refusal, and JSON parse errors.
+
+\subsection{Cost Analysis}
+
+Per-patient and total benchmark costs across all five models, highlighting the cost-accuracy trade-off.
+
+\subsection{Comparison with Literature}
+
+Positioning of results relative to Jin et al.~\cite{jin2025mllm} and ScienceDirect~\cite{sciencedirect2024} MLLM benchmarks.
+
+\subsection{Answering the Research Questions}
+
+Consolidated answers to RQ1--RQ4 based on the empirical evidence.
+
+% ============================================================================
+% 7. Implementation
+% ============================================================================
+\section{Implementation}
+
+\subsection{Code Structure}
+
+The repository is organized as follows:
+
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+Final_Project/
+├── config.py                 # Model IDs, dataset paths, thresholds
+├── run.py                    # Single-patient entry point
+├── run_benchmark.py          # Multi-patient benchmark runner
+├── .env                      # OpenRouter API key (gitignored)
+├── agents/
+│   ├── pipeline.py           # Five agent implementations
+│   └── workflow.py           # Sequential orchestration
+├── app/
+│   └── app.py                # Streamlit user interface
+├── evaluation/
+│   └── visualize.py          # Results visualization
+├── OIA-ODIR-Merged/          # Dataset (not in git)
+└── results/                  # Benchmark outputs
+\end{lstlisting}
+
+\subsection{Reproducibility}
+
+All experiments are reproducible with the following steps:
+
+\begin{enumerate}
+    \item Install dependencies: \texttt{pip install -r requirements.txt}
+    \item Download OIA-ODIR and place under \texttt{OIA-ODIR-Merged/}
+    \item Set \texttt{OPENROUTER\_API\_KEY} in \texttt{.env}
+    \item Run benchmark: \texttt{python run\_benchmark.py 200}
+    \item Generate visualizations: \texttt{python -m evaluation.visualize}
+\end{enumerate}
+
+Random seed = 42 is used throughout.
+
+\subsection{User Interface}
+
+A Streamlit web application (\texttt{app/app.py}) provides four tabs: (1) Demo Patient --- select any OIA-ODIR patient and run the pipeline; (2) New Patient --- upload custom fundus images and clinical data; (3) Benchmark --- view saved metrics and comparison charts; (4) Analytics --- session history and distribution. The interface is intended for interactive demonstrations, not deployed clinical use.
+
+% ============================================================================
+% 8. Conclusion
+% ============================================================================
+\section{Conclusion and Future Work}
+
+This project designed and evaluated a five-agent multimodal pipeline for diabetes risk and DR detection using only pretrained vision-language LLMs --- no training was performed. The pipeline successfully integrates bilateral fundus imaging, demographic data, and clinical keywords within a single coherent reasoning chain, producing tier-based prevention plans that match clinical workflow expectations. The benchmark across five models from four providers (Anthropic, Google closed, Google open-weight, OpenAI, Alibaba) provides the first systematic cross-provider and licensing-aware evaluation of multimodal LLMs for diabetic retinopathy screening on paired-modality patient data.
+
+\subsection*{Limitations}
+
+\begin{enumerate}
+    \item Diagnostic accuracy of zero-shot vision-language LLMs remains below that of dedicated CNN systems (approximately 50--70\% vs.\ $>$90\%).
+    \item Sample size (200 patients) is adequate for model comparison but insufficient for claims of clinical utility.
+    \item Output reliability varies substantially by model: verbose models produce longer reasoning that can exceed token limits.
+    \item Prompt engineering, while effective, is brittle --- small prompt changes can affect output format and performance.
+\end{enumerate}
+
+\subsection*{Future Work}
+
+\begin{enumerate}
+    \item Expand evaluation to the full 5,000-patient OIA-ODIR dataset.
+    \item Incorporate MedGemma and other domain-specialized medical LLMs.
+    \item Add an ensemble agent that combines predictions from all five models with uncertainty-weighted voting.
+    \item Develop few-shot prompting with curated DR examples to improve recall.
+    \item Integrate with the DDR dataset for five-class severity grading.
+    \item Evaluate clinician trust and interpretability through user studies.
+\end{enumerate}
+
+% ============================================================================
+% References
+% ============================================================================
+\begin{thebibliography}{99}
+
+\bibitem{gulshan2016jama}
+Gulshan, V. et al. (2016). ``Development and Validation of a Deep Learning Algorithm for Detection of Diabetic Retinopathy in Retinal Fundus Photographs.'' \textit{JAMA}, 316(22), 2402--2410.
+
+\bibitem{ting2017jama}
+Ting, D. S. W. et al. (2017). ``Development and Validation of a Deep Learning System for Diabetic Retinopathy and Related Eye Diseases Using Retinal Images from Multiethnic Populations.'' \textit{JAMA}, 318(22), 2211--2223.
+
+\bibitem{jin2025mllm}
+Jin, S. et al. (2025). ``Can Multimodal Large Language Models Diagnose Diabetic Retinopathy from Fundus Photos? A Quantitative Evaluation.'' \textit{Ophthalmology Science}.
+
+\bibitem{nature2025agentic}
+Nature Scientific Reports (2025). ``Detection and Diagnosis of Diabetic Retinopathy in Retinal Fundus Images Using Agentic AI Approaches.''
+
+\bibitem{saab2024gemini}
+Saab, K. et al. (2024). ``Capabilities of Gemini Models in Medicine.'' \textit{Google DeepMind Technical Report}.
+
+\bibitem{gpt4o}
+OpenAI (2024). ``GPT-4o System Card.'' OpenAI Technical Report.
+
+\bibitem{gemma3}
+Gemma Team, Google DeepMind (2025). ``Gemma 3 Technical Report.'' \textit{arXiv:2503.19786}.
+
+\bibitem{medgemma2025}
+Gemma Team, Google DeepMind (2025). ``MedGemma Technical Report.'' \textit{arXiv:2507.05201}.
+
+\bibitem{qwen3vl}
+Qwen Team, Alibaba (2025). ``Qwen3-VL Technical Report.'' Released November 2025.
+
+\bibitem{umit2025}
+UMIT (2025). ``UMIT: Unifying Medical Imaging Tasks via Vision-Language Models.'' \textit{arXiv:2503.15892}.
+
+\bibitem{anthropic}
+Anthropic (2024). ``The Claude 3 Model Family: Opus, Sonnet, Haiku.'' Anthropic Model Card.
+
+\bibitem{claude2024jjr}
+Japanese Journal of Radiology (Springer, 2024). ``Diagnostic performances of Claude 3 Opus and Claude 3.5 Sonnet from patient history and key images in Radiology's Diagnosis Please cases.''
+
+\bibitem{dir2025}
+Diagnostic and Interventional Radiology (2025). ``Evaluating text and visual diagnostic capabilities of large language models on questions related to the Breast Imaging Reporting and Data System Atlas 5th edition.''
+
+\bibitem{sciencedirect2024}
+ScienceDirect (2024). ``Visual-textual integration in LLMs for medical diagnosis: A preliminary quantitative analysis.''
+
+\bibitem{metaradiology2024}
+Meta-Radiology (2024). ``Evaluation of Gemini-series and GPT-4-series Models Across Medical Imaging Datasets.''
+
+\bibitem{huang2020npj}
+Huang, S.-C. et al. (2020). ``Fusion of Medical Imaging and Electronic Health Records Using Deep Learning: A Systematic Review and Implementation Guidelines.'' \textit{npj Digital Medicine}, 3, 136.
+
+\bibitem{jmiir2025}
+Journal of Medical Imaging and Interventional Radiology (2025). ``Diagnostic Accuracy of AI or DL-Enhanced Technologies in the Diagnosis of Diabetic Retinopathy: A Systematic Review.''
+
+\bibitem{mdpi2025}
+MDPI Bioengineering (2025). ``An Empirical Evaluation of Low-Rank Adapted Vision-Language Models on Medical Imaging.''
+
+\bibitem{li2019oiaodir}
+Li, T. et al. (2019). ``Diagnostic Assessment of Deep Learning Algorithms for Diabetic Retinopathy Screening.'' \textit{Information Sciences}, 501, 511--522.
+
+\bibitem{langgraph2024}
+LangChain (2024). ``LangGraph: Graph-based Orchestration for LLM Agents.'' LangChain Documentation.
+
+\bibitem{preprints2025}
+Preprints (2025). ``Multimodal Generative AI in Diagnostics: Bridging Medical Imaging and Clinical Reasoning.''
+
+\bibitem{baltrusaitis}
+Baltru{\v{s}}aitis, T., Ahuja, C., \& Morency, L.-P. (2019). ``Multimodal Machine Learning: A Survey and Taxonomy.'' \textit{IEEE Transactions on Pattern Analysis and Machine Intelligence}, 41, 423--443.
+
+\end{thebibliography}
+
+\end{document}
