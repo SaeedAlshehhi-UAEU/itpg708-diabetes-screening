@@ -348,7 +348,7 @@ Ground Truth D (DR): 1
 
 ## GitHub Repository
 
-**Repository Link:** https://github.com/<your-username>/itpg708-diabetes-screening
+**Repository Link:** https://github.com/SaeedAlshehhi-UAEU/itpg708-diabetes-screening
 
 The GitHub repository:
 
