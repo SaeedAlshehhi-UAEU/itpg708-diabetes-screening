@@ -1,0 +1,1001 @@
+patient_id,model,ground_truth,predicted_risk_level,predicted_risk_score,predicted_dr,confidence,success,time_seconds,error,model_key
+2161,claude_sonnet,1,high,88.5,1,0.85,True,65.95,,claude_sonnet
+707,claude_sonnet,1,high,78.5,1,0.74,True,69.12,,claude_sonnet
+794,claude_sonnet,1,high,88.5,1,0.91,True,68.75,,claude_sonnet
+2823,claude_sonnet,0,high,88.5,1,0.82,True,67.99,,claude_sonnet
+665,claude_sonnet,0,high,88.5,1,0.84,True,63.34,,claude_sonnet
+3126,claude_sonnet,0,low,18.5,0,0.78,True,46.77,,claude_sonnet
+4452,claude_sonnet,1,moderate,48.5,0,0.72,True,55.35,,claude_sonnet
+1324,claude_sonnet,0,high,91.0,1,0.85,True,69.89,,claude_sonnet
+2831,claude_sonnet,0,high,82.5,1,0.78,True,64.33,,claude_sonnet
+4177,claude_sonnet,1,moderate,58.5,0,0.71,True,61.49,,claude_sonnet
+3976,claude_sonnet,1,high,87.0,1,0.85,True,70.5,,claude_sonnet
+2660,claude_sonnet,0,moderate,42.0,0,0.74,True,56.87,,claude_sonnet
+3381,claude_sonnet,0,moderate,38.0,0,0.78,True,55.92,,claude_sonnet
+420,claude_sonnet,1,high,82.5,1,0.87,True,70.23,,claude_sonnet
+2011,claude_sonnet,0,high,92.5,1,0.89,True,61.3,,claude_sonnet
+4405,claude_sonnet,0,high,82.5,1,0.78,True,60.24,,claude_sonnet
+4661,claude_sonnet,1,moderate,58.0,0,0.65,True,59.93,,claude_sonnet
+1616,claude_sonnet,0,high,94.0,1,0.91,True,75.74,,claude_sonnet
+4715,claude_sonnet,1,high,88.5,1,0.87,True,70.56,,claude_sonnet
+4510,claude_sonnet,1,high,82.5,1,0.81,True,64.34,,claude_sonnet
+3853,claude_sonnet,0,moderate,42.0,0,0.75,True,96.59,,claude_sonnet
+4924,claude_sonnet,1,moderate,52.0,0,0.58,True,54.89,,claude_sonnet
+3516,claude_sonnet,0,low,14.5,0,0.78,True,49.1,,claude_sonnet
+1167,claude_sonnet,1,high,91.0,1,0.87,True,73.9,,claude_sonnet
+516,claude_sonnet,1,high,87.5,1,0.85,True,172.75,,claude_sonnet
+369,claude_sonnet,1,high,91.0,1,0.88,True,75.41,,claude_sonnet
+3981,claude_sonnet,1,high,88.5,1,0.84,True,66.4,,claude_sonnet
+3945,claude_sonnet,1,moderate,55.0,0,0.62,True,64.26,,claude_sonnet
+2759,claude_sonnet,0,low,9.5,0,0.87,True,49.43,,claude_sonnet
+3277,claude_sonnet,0,moderate,38.0,0,0.74,True,48.68,,claude_sonnet
+4684,claude_sonnet,1,moderate,58.0,0,0.71,True,69.98,,claude_sonnet
+836,claude_sonnet,1,high,88.5,1,0.87,True,87.19,,claude_sonnet
+22,claude_sonnet,1,high,91.5,1,0.93,True,71.38,,claude_sonnet
+4322,claude_sonnet,1,moderate,58.0,0,0.55,True,63.18,,claude_sonnet
+1992,claude_sonnet,0,low,18.0,0,0.76,True,48.29,,claude_sonnet
+867,claude_sonnet,0,high,91.0,1,0.84,True,65.46,,claude_sonnet
+2029,claude_sonnet,0,high,91.5,1,0.85,True,70.02,,claude_sonnet
+2240,claude_sonnet,0,moderate,52.0,0,0.45,True,60.87,,claude_sonnet
+986,claude_sonnet,0,moderate,42.0,0,0.74,True,63.73,,claude_sonnet
+4928,claude_sonnet,1,high,74.0,1,0.71,True,89.64,,claude_sonnet
+4387,claude_sonnet,1,moderate,48.5,0,0.65,True,77.22,,claude_sonnet
+589,claude_sonnet,0,moderate,38.5,0,0.76,True,56.27,,claude_sonnet
+4043,claude_sonnet,1,high,91.5,1,0.94,True,71.27,,claude_sonnet
+4403,claude_sonnet,1,high,88.5,1,0.91,True,64.09,,claude_sonnet
+2834,claude_sonnet,0,moderate,52.0,0,0.55,True,60.15,,claude_sonnet
+1574,claude_sonnet,0,high,97.0,1,0.96,True,74.31,,claude_sonnet
+4619,claude_sonnet,1,high,88.5,1,0.87,True,91.83,,claude_sonnet
+4797,claude_sonnet,1,high,87.5,1,0.88,True,74.39,,claude_sonnet
+1742,claude_sonnet,0,high,97.0,1,0.94,True,60.2,,claude_sonnet
+4187,claude_sonnet,1,high,72.5,1,0.74,True,64.89,,claude_sonnet
+336,claude_sonnet,0,high,87.5,1,0.84,True,65.85,,claude_sonnet
+3459,claude_sonnet,0,high,91.0,1,0.87,True,79.04,,claude_sonnet
+4175,claude_sonnet,1,high,82.5,1,0.78,True,81.34,,claude_sonnet
+3241,claude_sonnet,0,low,12.5,0,0.83,True,51.44,,claude_sonnet
+702,claude_sonnet,0,moderate,38.0,0,0.74,True,67.49,,claude_sonnet
+4794,claude_sonnet,1,high,74.0,1,0.73,True,68.32,,claude_sonnet
+3014,claude_sonnet,0,moderate,38.0,0,0.62,True,61.68,,claude_sonnet
+4143,claude_sonnet,1,high,87.5,1,0.83,True,73.24,,claude_sonnet
+608,claude_sonnet,0,high,82.5,1,0.78,True,157.37,,claude_sonnet
+596,claude_sonnet,1,high,74.0,1,0.71,True,75.36,,claude_sonnet
+1958,claude_sonnet,0,high,88.5,1,0.85,True,92.49,,claude_sonnet
+3955,claude_sonnet,1,high,78.5,1,0.74,True,195.69,,claude_sonnet
+4817,claude_sonnet,1,high,74.0,1,0.73,True,62.55,,claude_sonnet
+538,claude_sonnet,1,high,88.5,1,0.91,True,131.32,,claude_sonnet
+4742,claude_sonnet,1,high,91.5,1,0.93,True,76.8,,claude_sonnet
+3460,claude_sonnet,0,high,97.0,1,0.94,True,99.28,,claude_sonnet
+911,claude_sonnet,1,high,87.5,1,0.85,True,71.01,,claude_sonnet
+152,claude_sonnet,0,high,87.5,1,0.84,True,64.3,,claude_sonnet
+4310,claude_sonnet,1,high,91.0,1,0.93,True,83.4,,claude_sonnet
+3298,claude_sonnet,0,moderate,48.5,0,0.68,True,88.08,,claude_sonnet
+4353,claude_sonnet,1,high,87.5,1,0.91,True,71.74,,claude_sonnet
+2646,claude_sonnet,0,moderate,22.5,0,0.8,True,68.69,,claude_sonnet
+3572,claude_sonnet,0,high,87.5,1,0.81,True,98.66,,claude_sonnet
+600,claude_sonnet,1,high,82.5,1,0.87,True,67.81,,claude_sonnet
+1197,claude_sonnet,0,high,92.0,1,0.88,True,92.35,,claude_sonnet
+264,claude_sonnet,0,high,91.0,1,0.89,True,72.65,,claude_sonnet
+4163,claude_sonnet,1,moderate,52.0,0,0.72,True,70.97,,claude_sonnet
+3623,claude_sonnet,0,moderate,42.0,0,0.58,True,69.09,,claude_sonnet
+1726,claude_sonnet,0,high,96.0,1,0.93,True,73.42,,claude_sonnet
+946,claude_sonnet,0,moderate,38.0,0,0.78,True,57.62,,claude_sonnet
+4624,claude_sonnet,1,high,94.0,1,0.95,True,62.53,,claude_sonnet
+3969,claude_sonnet,1,high,78.5,1,0.74,True,86.2,,claude_sonnet
+1286,claude_sonnet,1,high,94.0,1,0.95,True,82.63,,claude_sonnet
+1762,claude_sonnet,0,high,91.0,1,0.84,True,71.73,,claude_sonnet
+3808,claude_sonnet,0,high,78.5,1,0.71,True,73.41,,claude_sonnet
+4930,claude_sonnet,1,high,87.5,1,0.81,True,59.49,,claude_sonnet
+1380,claude_sonnet,0,high,92.0,1,0.88,True,74.96,,claude_sonnet
+4432,claude_sonnet,1,high,72.0,1,0.7,True,65.85,,claude_sonnet
+2848,claude_sonnet,0,high,78.5,1,0.74,True,71.64,,claude_sonnet
+1185,claude_sonnet,1,high,87.5,1,0.83,True,93.1,,claude_sonnet
+4010,claude_sonnet,1,high,82.5,1,0.85,True,60.71,,claude_sonnet
+3600,claude_sonnet,0,moderate,38.0,0,0.74,True,59.99,,claude_sonnet
+3598,claude_sonnet,0,moderate,38.0,0,0.74,True,48.84,,claude_sonnet
+195,claude_sonnet,1,high,88.5,1,0.87,True,66.19,,claude_sonnet
+929,claude_sonnet,1,high,91.0,1,0.89,True,68.94,,claude_sonnet
+1039,claude_sonnet,0,high,87.0,1,0.78,True,91.02,,claude_sonnet
+141,claude_sonnet,0,moderate,52.0,0,0.58,True,57.13,,claude_sonnet
+4641,claude_sonnet,1,moderate,52.0,0,0.65,True,53.36,,claude_sonnet
+4992,claude_sonnet,1,moderate,47.5,0,0.72,True,79.29,,claude_sonnet
+3347,claude_sonnet,0,moderate,38.0,0,0.78,True,52.13,,claude_sonnet
+4354,claude_sonnet,1,moderate,48.0,0,0.61,True,55.0,,claude_sonnet
+669,claude_sonnet,1,moderate,52.0,0,0.71,True,52.61,,claude_sonnet
+1371,claude_sonnet,0,high,88.5,1,0.78,True,62.19,,claude_sonnet
+717,claude_sonnet,0,high,87.5,1,0.81,True,72.26,,claude_sonnet
+3733,claude_sonnet,0,moderate,42.0,0,0.76,True,60.27,,claude_sonnet
+3534,claude_sonnet,0,moderate,42.0,0,0.74,True,49.7,,claude_sonnet
+398,claude_sonnet,1,high,87.5,1,0.88,True,62.6,,claude_sonnet
+121,claude_sonnet,1,high,82.5,1,0.81,True,68.51,,claude_sonnet
+1573,claude_sonnet,0,high,96.0,1,0.94,True,78.55,,claude_sonnet
+820,claude_sonnet,0,high,87.5,1,0.76,True,67.5,,claude_sonnet
+3350,claude_sonnet,0,moderate,52.0,0,0.71,True,57.92,,claude_sonnet
+4753,claude_sonnet,1,moderate,52.0,0,0.74,True,55.16,,claude_sonnet
+1298,claude_sonnet,0,moderate,42.0,0,0.74,True,66.05,,claude_sonnet
+2616,claude_sonnet,0,high,82.5,1,0.74,True,65.43,,claude_sonnet
+4666,claude_sonnet,1,high,91.0,1,0.88,True,67.52,,claude_sonnet
+1548,claude_sonnet,0,high,97.0,1,0.95,True,76.55,,claude_sonnet
+563,claude_sonnet,1,moderate,62.0,0,0.61,True,62.46,,claude_sonnet
+4615,claude_sonnet,1,high,91.0,1,0.89,True,102.03,,claude_sonnet
+339,claude_sonnet,0,high,87.5,1,0.82,True,71.04,,claude_sonnet
+4667,claude_sonnet,1,moderate,48.5,0,0.63,True,61.26,,claude_sonnet
+4958,claude_sonnet,1,moderate,62.0,0,0.65,True,70.13,,claude_sonnet
+1250,claude_sonnet,0,high,96.0,1,0.94,True,62.27,,claude_sonnet
+577,claude_sonnet,0,moderate,38.0,0,0.75,True,58.84,,claude_sonnet
+2948,claude_sonnet,0,moderate,38.0,0,0.82,True,58.74,,claude_sonnet
+4889,claude_sonnet,1,high,87.5,1,0.85,True,68.31,,claude_sonnet
+4937,claude_sonnet,1,high,74.0,1,0.72,True,65.15,,claude_sonnet
+3450,claude_sonnet,0,high,91.0,1,0.85,True,62.71,,claude_sonnet
+2786,claude_sonnet,0,high,82.5,1,0.74,True,80.72,,claude_sonnet
+4241,claude_sonnet,1,high,92.0,1,0.88,True,67.28,,claude_sonnet
+4946,claude_sonnet,1,high,82.5,1,0.81,True,63.6,,claude_sonnet
+3479,claude_sonnet,0,moderate,42.0,0,0.68,True,69.53,,claude_sonnet
+4545,claude_sonnet,1,high,72.0,1,0.65,True,71.05,,claude_sonnet
+4341,claude_sonnet,1,high,94.0,1,0.93,True,145.32,,claude_sonnet
+2080,claude_sonnet,0,high,72.0,1,0.76,True,61.86,,claude_sonnet
+4993,claude_sonnet,1,high,78.5,1,0.81,True,64.8,,claude_sonnet
+1418,claude_sonnet,0,high,82.5,1,0.71,True,78.97,,claude_sonnet
+229,claude_sonnet,1,high,94.0,1,0.95,True,74.33,,claude_sonnet
+1449,claude_sonnet,0,high,91.0,1,0.85,True,101.61,,claude_sonnet
+3953,claude_sonnet,1,high,91.0,1,0.87,True,70.54,,claude_sonnet
+2454,claude_sonnet,0,moderate,38.0,0,0.74,True,58.04,,claude_sonnet
+2279,claude_sonnet,0,high,68.5,1,0.42,True,57.22,,claude_sonnet
+824,claude_sonnet,0,high,91.0,1,0.85,True,60.58,,claude_sonnet
+3219,claude_sonnet,0,high,88.5,1,0.85,True,74.73,,claude_sonnet
+4719,claude_sonnet,1,moderate,58.5,0,0.67,True,58.31,,claude_sonnet
+4858,claude_sonnet,1,high,91.0,1,0.88,True,91.36,,claude_sonnet
+1088,claude_sonnet,1,high,92.0,1,0.91,True,74.01,,claude_sonnet
+814,claude_sonnet,1,high,88.5,1,0.87,True,63.93,,claude_sonnet
+1291,claude_sonnet,0,high,82.5,1,0.74,True,88.95,,claude_sonnet
+4456,claude_sonnet,1,moderate,58.0,0,0.67,True,67.26,,claude_sonnet
+4569,claude_sonnet,1,high,91.0,1,0.93,True,93.7,,claude_sonnet
+2417,claude_sonnet,0,moderate,38.0,0,0.76,True,49.0,,claude_sonnet
+1333,claude_sonnet,0,moderate,38.0,0,0.74,True,120.05,,claude_sonnet
+4251,claude_sonnet,1,moderate,52.0,0,0.61,True,59.81,,claude_sonnet
+1942,claude_sonnet,1,high,91.5,1,0.93,True,117.92,,claude_sonnet
+1078,claude_sonnet,1,high,96.0,1,0.93,True,74.38,,claude_sonnet
+4515,claude_sonnet,1,high,91.0,1,0.93,True,65.54,,claude_sonnet
+3132,claude_sonnet,0,moderate,42.0,0,0.55,True,62.09,,claude_sonnet
+3186,claude_sonnet,0,high,88.5,1,0.81,True,64.82,,claude_sonnet
+4490,claude_sonnet,1,high,87.5,1,0.83,True,82.88,,claude_sonnet
+744,claude_sonnet,1,high,91.0,1,0.89,True,74.45,,claude_sonnet
+662,claude_sonnet,0,high,91.0,1,0.89,True,77.0,,claude_sonnet
+3556,claude_sonnet,0,high,91.0,1,0.85,True,68.56,,claude_sonnet
+3468,claude_sonnet,0,high,96.0,1,0.91,True,75.94,,claude_sonnet
+3290,claude_sonnet,0,high,82.5,1,0.76,True,81.63,,claude_sonnet
+4408,claude_sonnet,1,moderate,52.0,0,0.71,True,58.05,,claude_sonnet
+4491,claude_sonnet,1,high,88.5,1,0.85,True,62.83,,claude_sonnet
+390,claude_sonnet,0,high,91.0,1,0.85,True,64.77,,claude_sonnet
+1105,claude_sonnet,1,moderate,58.0,0,0.65,True,51.11,,claude_sonnet
+1497,claude_sonnet,0,high,91.0,1,0.85,True,114.74,,claude_sonnet
+4265,claude_sonnet,1,moderate,62.0,0,0.74,True,74.65,,claude_sonnet
+1063,claude_sonnet,1,high,87.5,1,0.88,True,110.12,,claude_sonnet
+4141,claude_sonnet,1,high,91.5,1,0.89,True,80.9,,claude_sonnet
+4070,claude_sonnet,1,high,78.0,1,0.74,True,65.72,,claude_sonnet
+4039,claude_sonnet,1,high,78.5,1,0.71,True,67.62,,claude_sonnet
+585,claude_sonnet,0,moderate,48.0,0,0.65,True,78.1,,claude_sonnet
+3710,claude_sonnet,0,moderate,42.0,0,0.78,True,50.43,,claude_sonnet
+271,claude_sonnet,0,high,87.5,1,0.89,True,62.95,,claude_sonnet
+4602,claude_sonnet,1,high,78.5,1,0.74,False,70.99,agent errors,claude_sonnet
+3035,claude_sonnet,0,high,89.0,1,0.78,True,155.0,,claude_sonnet
+2378,claude_sonnet,0,moderate,52.0,0,0.71,True,63.53,,claude_sonnet
+4989,claude_sonnet,1,high,82.0,1,0.85,True,60.91,,claude_sonnet
+4916,claude_sonnet,1,moderate,58.0,0,0.61,True,76.76,,claude_sonnet
+2251,claude_sonnet,0,high,87.5,1,0.79,True,70.69,,claude_sonnet
+910,claude_sonnet,0,high,91.0,1,0.85,True,69.81,,claude_sonnet
+172,claude_sonnet,0,high,92.0,1,0.91,True,66.83,,claude_sonnet
+3825,claude_sonnet,0,high,92.0,1,0.85,True,66.51,,claude_sonnet
+4388,claude_sonnet,1,moderate,58.0,0,0.65,True,56.19,,claude_sonnet
+2393,claude_sonnet,0,moderate,42.0,0,0.75,True,53.77,,claude_sonnet
+1228,claude_sonnet,1,high,91.0,1,0.89,True,76.67,,claude_sonnet
+4502,claude_sonnet,1,high,82.0,1,0.81,True,77.65,,claude_sonnet
+3722,claude_sonnet,0,high,82.5,1,0.78,True,61.38,,claude_sonnet
+60,claude_sonnet,0,moderate,32.0,0,0.78,True,84.67,,claude_sonnet
+4811,claude_sonnet,1,high,78.5,1,0.71,True,62.57,,claude_sonnet
+2647,claude_sonnet,0,low,18.5,0,0.71,True,63.87,,claude_sonnet
+4499,claude_sonnet,1,high,91.0,1,0.87,True,161.02,,claude_sonnet
+1379,claude_sonnet,0,high,91.0,1,0.87,True,74.25,,claude_sonnet
+199,claude_sonnet,1,high,94.0,1,0.95,True,66.83,,claude_sonnet
+4394,claude_sonnet,1,moderate,58.5,0,0.65,True,67.25,,claude_sonnet
+3586,claude_sonnet,0,high,82.5,1,0.74,True,74.81,,claude_sonnet
+1791,claude_sonnet,0,high,96.0,1,0.93,True,111.47,,claude_sonnet
+2161,gemini_25,1,high,0.85,1,0.9,True,28.76,,gemini_25
+707,gemini_25,1,high,0.85,1,0.9,True,16.85,,gemini_25
+794,gemini_25,1,high,0.95,1,0.95,True,17.56,,gemini_25
+2823,gemini_25,0,moderate,45.0,0,0.85,True,13.98,,gemini_25
+665,gemini_25,0,high,0.9,1,0.92,True,18.89,,gemini_25
+3126,gemini_25,0,high,0.85,1,0.9,True,16.59,,gemini_25
+4452,gemini_25,1,moderate,0.6,0,0.85,True,15.3,,gemini_25
+1324,gemini_25,0,high,0.9,1,0.95,True,27.51,,gemini_25
+2831,gemini_25,0,high,0.95,1,0.95,True,14.65,,gemini_25
+4177,gemini_25,1,moderate,0.55,0,0.85,True,14.38,,gemini_25
+3976,gemini_25,1,high,0.85,1,0.92,True,29.81,,gemini_25
+2660,gemini_25,0,low,0.15,0,0.9,True,18.07,,gemini_25
+3381,gemini_25,0,low,0.35,0,0.9,True,15.61,,gemini_25
+420,gemini_25,1,high,0.95,1,0.92,True,16.98,,gemini_25
+2011,gemini_25,0,high,0.9,1,0.9,False,30.11,agent errors,gemini_25
+4405,gemini_25,0,high,0.85,1,0.9,True,29.16,,gemini_25
+4661,gemini_25,1,moderate,0.5,0,0.85,True,17.6,,gemini_25
+1616,gemini_25,0,high,0.9,1,0.95,False,22.38,agent errors,gemini_25
+4715,gemini_25,1,high,0.9,1,0.95,True,28.42,,gemini_25
+4510,gemini_25,1,high,0.85,1,0.9,True,22.63,,gemini_25
+3853,gemini_25,0,moderate,45.0,0,0.85,True,28.56,,gemini_25
+4924,gemini_25,1,high,0.85,1,0.9,True,18.11,,gemini_25
+3516,gemini_25,0,low,0.35,0,0.9,True,34.12,,gemini_25
+1167,gemini_25,1,high,0.9,1,0.92,False,32.7,agent errors,gemini_25
+516,gemini_25,1,high,0.85,1,0.9,True,26.91,,gemini_25
+369,gemini_25,1,high,0.85,1,0.9,True,17.7,,gemini_25
+3981,gemini_25,1,high,0.9,1,0.95,True,24.42,,gemini_25
+3945,gemini_25,1,high,0.85,1,0.9,True,23.57,,gemini_25
+2759,gemini_25,0,low,0.35,0,0.9,True,17.55,,gemini_25
+3277,gemini_25,0,high,0.9,1,0.9,True,15.49,,gemini_25
+4684,gemini_25,1,moderate,0.45,0,0.85,True,18.26,,gemini_25
+836,gemini_25,1,high,0.92,1,0.95,True,30.49,,gemini_25
+22,gemini_25,1,high,0.98,1,0.95,True,17.88,,gemini_25
+4322,gemini_25,1,high,0.85,1,0.9,True,14.26,,gemini_25
+1992,gemini_25,0,high,0.85,1,0.9,True,20.11,,gemini_25
+867,gemini_25,0,high,0.95,1,0.92,True,22.11,,gemini_25
+2029,gemini_25,0,high,90.0,1,0.92,True,20.11,,gemini_25
+2240,gemini_25,0,moderate,0.45,0,0.85,True,16.96,,gemini_25
+986,gemini_25,0,low,0.35,0,0.9,True,17.99,,gemini_25
+4928,gemini_25,1,unknown,0.0,0,0.0,False,16.97,agent errors,gemini_25
+4387,gemini_25,1,moderate,0.5,0,0.85,True,15.2,,gemini_25
+589,gemini_25,0,high,85.0,1,0.9,True,18.98,,gemini_25
+4043,gemini_25,1,high,0.9,1,0.95,True,20.72,,gemini_25
+4403,gemini_25,1,high,0.85,1,0.9,True,16.41,,gemini_25
+2834,gemini_25,0,high,0.85,1,0.92,True,28.61,,gemini_25
+1574,gemini_25,0,high,0.98,1,0.95,False,20.21,agent errors,gemini_25
+4619,gemini_25,1,high,0.85,1,0.92,True,17.64,,gemini_25
+4797,gemini_25,1,high,0.9,1,0.9,True,16.7,,gemini_25
+1742,gemini_25,0,high,0.95,1,0.95,True,17.58,,gemini_25
+4187,gemini_25,1,moderate,60.0,0,0.85,True,20.13,,gemini_25
+336,gemini_25,0,high,0.85,1,0.9,True,19.51,,gemini_25
+3459,gemini_25,0,high,0.9,1,0.95,True,17.19,,gemini_25
+4175,gemini_25,1,high,0.85,1,0.88,True,17.99,,gemini_25
+3241,gemini_25,0,low,0.26,0,0.9,True,17.04,,gemini_25
+702,gemini_25,0,low,0.2,0,0.9,True,20.48,,gemini_25
+4794,gemini_25,1,high,0.7,1,0.85,True,13.38,,gemini_25
+3014,gemini_25,0,moderate,45.0,0,0.8,True,21.88,,gemini_25
+4143,gemini_25,1,high,0.85,1,0.9,True,21.81,,gemini_25
+608,gemini_25,0,high,0.9,1,0.9,True,18.83,,gemini_25
+596,gemini_25,1,high,0.85,1,0.92,True,16.85,,gemini_25
+1958,gemini_25,0,high,0.95,1,0.9,True,17.11,,gemini_25
+3955,gemini_25,1,high,0.85,1,0.92,True,14.4,,gemini_25
+4817,gemini_25,1,high,0.7,1,0.9,True,21.29,,gemini_25
+538,gemini_25,1,high,0.85,1,0.92,True,17.72,,gemini_25
+4742,gemini_25,1,high,0.95,1,0.92,True,18.56,,gemini_25
+3460,gemini_25,0,moderate,50.0,0,0.85,True,18.02,,gemini_25
+911,gemini_25,1,moderate,0.5,0,0.85,True,16.06,,gemini_25
+152,gemini_25,0,high,0.85,1,0.9,True,14.25,,gemini_25
+4310,gemini_25,1,high,0.9,1,0.92,False,16.9,agent errors,gemini_25
+3298,gemini_25,0,moderate,45.0,0,0.8,True,18.64,,gemini_25
+4353,gemini_25,1,high,0.9,1,0.95,True,17.72,,gemini_25
+2646,gemini_25,0,moderate,35.0,0,0.8,True,25.43,,gemini_25
+3572,gemini_25,0,moderate,45.0,0,0.8,True,16.74,,gemini_25
+600,gemini_25,1,high,0.85,1,0.9,True,17.19,,gemini_25
+1197,gemini_25,0,high,0.9,1,0.92,True,16.8,,gemini_25
+264,gemini_25,0,high,0.9,1,0.95,True,16.84,,gemini_25
+4163,gemini_25,1,high,0.85,1,0.9,True,16.52,,gemini_25
+3623,gemini_25,0,low,0.15,0,0.9,True,15.99,,gemini_25
+1726,gemini_25,0,high,0.95,1,0.9,True,15.22,,gemini_25
+946,gemini_25,0,moderate,0.45,0,0.9,True,17.52,,gemini_25
+4624,gemini_25,1,high,0.98,1,0.95,True,22.49,,gemini_25
+3969,gemini_25,1,moderate,0.55,0,0.85,True,16.18,,gemini_25
+1286,gemini_25,1,high,0.9,1,0.95,True,22.24,,gemini_25
+1762,gemini_25,0,high,0.85,1,0.89,True,17.85,,gemini_25
+3808,gemini_25,0,high,0.9,1,0.92,True,18.67,,gemini_25
+4930,gemini_25,1,high,0.9,1,0.9,True,17.15,,gemini_25
+1380,gemini_25,0,high,0.95,1,0.95,True,15.55,,gemini_25
+4432,gemini_25,1,moderate,0.5,0,0.85,True,15.36,,gemini_25
+2848,gemini_25,0,moderate,0.35,0,0.85,True,18.54,,gemini_25
+1185,gemini_25,1,high,0.9,1,0.92,True,19.47,,gemini_25
+4010,gemini_25,1,high,0.85,1,0.9,True,19.81,,gemini_25
+3600,gemini_25,0,high,35.0,1,0.85,True,16.53,,gemini_25
+3598,gemini_25,0,moderate,35.0,0,0.85,True,18.57,,gemini_25
+195,gemini_25,1,unknown,0.0,0,0.0,False,18.51,agent errors,gemini_25
+929,gemini_25,1,high,0.85,1,0.9,True,17.42,,gemini_25
+1039,gemini_25,0,moderate,0.45,0,0.85,True,17.67,,gemini_25
+141,gemini_25,0,low,0.25,0,0.9,True,15.39,,gemini_25
+4641,gemini_25,1,moderate,0.5,0,0.85,True,16.48,,gemini_25
+4992,gemini_25,1,high,0.85,1,0.9,True,18.14,,gemini_25
+3347,gemini_25,0,high,75.0,1,0.9,True,18.66,,gemini_25
+4354,gemini_25,1,moderate,0.53,0,0.85,True,14.79,,gemini_25
+669,gemini_25,1,high,0.85,1,0.9,True,18.07,,gemini_25
+1371,gemini_25,0,low,0.45,0,0.9,True,15.48,,gemini_25
+717,gemini_25,0,high,0.85,1,0.9,True,22.49,,gemini_25
+3733,gemini_25,0,low,0.35,0,0.95,True,19.39,,gemini_25
+3534,gemini_25,0,moderate,45.0,0,0.9,True,16.74,,gemini_25
+398,gemini_25,1,high,0.9,1,0.95,True,17.64,,gemini_25
+121,gemini_25,1,high,0.85,1,0.9,True,16.56,,gemini_25
+1573,gemini_25,0,high,90.0,1,0.95,True,19.09,,gemini_25
+820,gemini_25,0,high,0.85,1,0.95,True,22.6,,gemini_25
+3350,gemini_25,0,high,0.85,1,0.92,True,20.1,,gemini_25
+4753,gemini_25,1,moderate,0.45,0,0.85,True,16.91,,gemini_25
+1298,gemini_25,0,moderate,35.0,0,0.8,True,15.66,,gemini_25
+2616,gemini_25,0,high,0.85,1,0.9,True,20.2,,gemini_25
+4666,gemini_25,1,high,0.85,1,0.9,True,18.69,,gemini_25
+1548,gemini_25,0,high,0.98,1,0.95,True,29.9,,gemini_25
+563,gemini_25,1,high,0.85,1,0.92,True,17.42,,gemini_25
+4615,gemini_25,1,high,0.95,1,0.9,True,20.46,,gemini_25
+339,gemini_25,0,high,0.85,1,0.9,True,19.81,,gemini_25
+4667,gemini_25,1,high,0.85,1,0.9,True,19.25,,gemini_25
+4958,gemini_25,1,high,0.82,1,0.9,True,18.75,,gemini_25
+1250,gemini_25,0,high,95.0,1,0.9,True,22.37,,gemini_25
+577,gemini_25,0,low,0.35,0,0.9,True,16.35,,gemini_25
+2948,gemini_25,0,low,4.5,0,0.9,True,26.79,,gemini_25
+4889,gemini_25,1,moderate,0.53,0,0.85,True,21.33,,gemini_25
+4937,gemini_25,1,high,0.85,1,0.9,True,18.11,,gemini_25
+3450,gemini_25,0,high,0.9,1,0.925,True,19.83,,gemini_25
+2786,gemini_25,0,moderate,45.0,0,0.85,False,14.43,agent errors,gemini_25
+4241,gemini_25,1,high,0.85,1,0.9,True,25.26,,gemini_25
+4946,gemini_25,1,high,0.85,1,0.92,True,17.4,,gemini_25
+3479,gemini_25,0,low,17.5,0,0.9,True,16.26,,gemini_25
+4545,gemini_25,1,high,0.85,1,0.9,True,28.24,,gemini_25
+4341,gemini_25,1,high,0.95,1,0.9,True,22.43,,gemini_25
+2080,gemini_25,0,high,0.85,1,0.9,True,19.92,,gemini_25
+4993,gemini_25,1,high,0.85,1,0.9,True,27.35,,gemini_25
+1418,gemini_25,0,moderate,50.0,0,0.85,False,19.39,agent errors,gemini_25
+229,gemini_25,1,high,0.92,1,0.95,True,21.47,,gemini_25
+1449,gemini_25,0,moderate,0.45,0,0.85,True,25.09,,gemini_25
+3953,gemini_25,1,high,0.9,1,0.9,True,19.34,,gemini_25
+2454,gemini_25,0,moderate,45.0,0,0.85,True,22.76,,gemini_25
+2279,gemini_25,0,moderate,0.38,0,0.85,True,14.56,,gemini_25
+824,gemini_25,0,low,0.28,0,0.9,True,13.57,,gemini_25
+3219,gemini_25,0,high,0.9,1,0.9,True,16.52,,gemini_25
+4719,gemini_25,1,high,0.82,1,0.9,True,17.11,,gemini_25
+4858,gemini_25,1,high,0.9,1,0.92,True,17.75,,gemini_25
+1088,gemini_25,1,high,0.7,1,0.9,True,21.21,,gemini_25
+814,gemini_25,1,high,0.95,1,0.92,True,21.01,,gemini_25
+1291,gemini_25,0,moderate,45.0,0,0.8,True,15.6,,gemini_25
+4456,gemini_25,1,high,0.9,1,0.95,True,22.94,,gemini_25
+4569,gemini_25,1,high,0.85,1,0.95,True,21.44,,gemini_25
+2417,gemini_25,0,high,0.85,1,0.9,True,14.03,,gemini_25
+1333,gemini_25,0,moderate,0.45,0,0.85,True,21.09,,gemini_25
+4251,gemini_25,1,high,0.7,1,0.85,True,15.77,,gemini_25
+1942,gemini_25,1,high,0.9,1,0.92,True,19.81,,gemini_25
+1078,gemini_25,1,high,0.95,1,0.9,True,18.81,,gemini_25
+4515,gemini_25,1,high,0.95,1,0.98,True,16.15,,gemini_25
+3132,gemini_25,0,unknown,0.0,0,0.0,False,18.78,agent errors,gemini_25
+3186,gemini_25,0,moderate,0.35,0,0.85,True,18.58,,gemini_25
+4490,gemini_25,1,high,0.88,1,0.9,True,21.3,,gemini_25
+744,gemini_25,1,high,0.9,1,0.9,True,19.95,,gemini_25
+662,gemini_25,0,high,0.9,1,0.95,True,18.63,,gemini_25
+3556,gemini_25,0,high,0.85,1,0.9,True,19.57,,gemini_25
+3468,gemini_25,0,moderate,0.45,0,0.85,True,19.61,,gemini_25
+3290,gemini_25,0,low,4.5,0,0.92,True,17.81,,gemini_25
+4408,gemini_25,1,moderate,0.6,0,0.85,True,20.9,,gemini_25
+4491,gemini_25,1,high,0.9,1,0.95,True,22.59,,gemini_25
+390,gemini_25,0,moderate,45.0,0,0.8,True,21.08,,gemini_25
+1105,gemini_25,1,high,0.85,1,0.92,True,22.06,,gemini_25
+1497,gemini_25,0,moderate,35.0,0,0.85,True,20.69,,gemini_25
+4265,gemini_25,1,moderate,0.65,0,0.9,True,22.99,,gemini_25
+1063,gemini_25,1,high,0.85,1,0.9,True,24.45,,gemini_25
+4141,gemini_25,1,high,0.85,1,0.92,True,19.94,,gemini_25
+4070,gemini_25,1,high,0.7,1,0.9,True,32.5,,gemini_25
+4039,gemini_25,1,high,0.85,1,0.9,True,21.36,,gemini_25
+585,gemini_25,0,low,0.35,0,0.85,True,14.87,,gemini_25
+3710,gemini_25,0,low,0.45,0,0.9,True,16.63,,gemini_25
+271,gemini_25,0,high,0.85,1,0.9,True,16.57,,gemini_25
+4602,gemini_25,1,high,0.85,1,0.9,True,19.59,,gemini_25
+3035,gemini_25,0,low,0.45,0,0.9,True,15.77,,gemini_25
+2378,gemini_25,0,high,0.85,1,0.9,True,17.69,,gemini_25
+4989,gemini_25,1,high,0.85,1,0.9,True,17.61,,gemini_25
+4916,gemini_25,1,moderate,0.5,0,0.85,True,14.06,,gemini_25
+2251,gemini_25,0,moderate,0.45,0,0.85,True,16.37,,gemini_25
+910,gemini_25,0,high,0.95,1,0.9,True,23.1,,gemini_25
+172,gemini_25,0,high,0.95,1,0.95,True,19.29,,gemini_25
+3825,gemini_25,0,high,0.35,1,0.9,True,26.7,,gemini_25
+4388,gemini_25,1,moderate,60.0,0,0.85,True,20.24,,gemini_25
+2393,gemini_25,0,low,0.35,0,0.9,True,18.53,,gemini_25
+1228,gemini_25,1,high,0.95,1,0.9,True,15.92,,gemini_25
+4502,gemini_25,1,high,0.85,1,0.92,True,16.71,,gemini_25
+3722,gemini_25,0,low,0.17,0,0.9,True,19.81,,gemini_25
+60,gemini_25,0,moderate,45.0,0,0.8,True,18.1,,gemini_25
+4811,gemini_25,1,high,0.9,1,0.95,True,17.26,,gemini_25
+2647,gemini_25,0,moderate,35.0,0,0.85,True,13.79,,gemini_25
+4499,gemini_25,1,high,0.92,1,0.95,True,18.97,,gemini_25
+1379,gemini_25,0,low,0.2,0,0.85,True,13.29,,gemini_25
+199,gemini_25,1,high,0.9,1,0.9,True,18.83,,gemini_25
+4394,gemini_25,1,high,0.82,1,0.85,True,23.87,,gemini_25
+3586,gemini_25,0,low,0.15,0,0.92,True,15.61,,gemini_25
+1791,gemini_25,0,high,98.0,1,0.95,True,21.88,,gemini_25
+2161,gpt4o,1,moderate,45.0,0,0.8,False,17.74,agent errors,gpt4o
+707,gpt4o,1,high,80.0,1,0.9,False,13.65,agent errors,gpt4o
+794,gpt4o,1,high,85.0,1,0.95,True,20.32,,gpt4o
+2823,gpt4o,0,moderate,35.0,0,0.85,True,16.19,,gpt4o
+665,gpt4o,0,moderate,35.0,0,0.6,False,14.75,agent errors,gpt4o
+3126,gpt4o,0,low,0.12,0,0.9,True,14.13,,gpt4o
+4452,gpt4o,1,moderate,45.0,0,0.8,True,13.44,,gpt4o
+1324,gpt4o,0,high,85.0,1,0.85,False,18.03,agent errors,gpt4o
+2831,gpt4o,0,moderate,20.0,0,0.7,False,13.93,agent errors,gpt4o
+4177,gpt4o,1,moderate,55.0,0,0.75,False,16.04,agent errors,gpt4o
+3976,gpt4o,1,moderate,60.0,0,0.8,True,18.72,,gpt4o
+2660,gpt4o,0,moderate,45.0,0,0.8,False,18.56,agent errors,gpt4o
+3381,gpt4o,0,moderate,0.35,0,0.9,True,16.14,,gpt4o
+420,gpt4o,1,high,70.0,1,0.85,True,17.66,,gpt4o
+2011,gpt4o,0,moderate,25.0,0,0.7,False,14.83,agent errors,gpt4o
+4405,gpt4o,0,high,85.0,1,0.9,True,18.24,,gpt4o
+4661,gpt4o,1,moderate,38.5,0,0.85,True,19.98,,gpt4o
+1616,gpt4o,0,moderate,35.0,0,0.6,False,17.01,agent errors,gpt4o
+4715,gpt4o,1,high,85.0,1,0.9,True,15.22,,gpt4o
+4510,gpt4o,1,high,85.0,1,0.85,True,19.89,,gpt4o
+3853,gpt4o,0,moderate,45.0,0,0.8,False,14.69,agent errors,gpt4o
+4924,gpt4o,1,moderate,35.0,0,0.7,False,18.18,agent errors,gpt4o
+3516,gpt4o,0,low,0.35,0,0.95,True,16.21,,gpt4o
+1167,gpt4o,1,high,75.0,1,0.8,False,17.15,agent errors,gpt4o
+516,gpt4o,1,high,70.0,1,0.85,False,17.7,agent errors,gpt4o
+369,gpt4o,1,high,85.0,1,0.9,True,40.32,,gpt4o
+3981,gpt4o,1,high,87.5,1,0.85,False,20.14,agent errors,gpt4o
+3945,gpt4o,1,moderate,50.0,0,0.8,True,15.41,,gpt4o
+2759,gpt4o,0,low,15.0,0,0.9,True,14.53,,gpt4o
+3277,gpt4o,0,moderate,35.0,0,0.85,True,17.5,,gpt4o
+4684,gpt4o,1,moderate,45.0,0,0.8,True,15.67,,gpt4o
+836,gpt4o,1,high,80.0,1,0.9,True,16.52,,gpt4o
+22,gpt4o,1,high,85.0,1,0.9,False,14.51,agent errors,gpt4o
+4322,gpt4o,1,high,85.0,1,0.85,False,17.89,agent errors,gpt4o
+1992,gpt4o,0,low,0.35,0,0.95,True,19.27,,gpt4o
+867,gpt4o,0,high,85.0,1,0.9,False,18.05,agent errors,gpt4o
+2029,gpt4o,0,high,85.0,1,0.9,False,18.23,agent errors,gpt4o
+2240,gpt4o,0,moderate,40.0,0,0.75,False,14.39,agent errors,gpt4o
+986,gpt4o,0,moderate,35.0,0,0.8,True,20.08,,gpt4o
+4928,gpt4o,1,moderate,48.33,0,0.8,True,19.53,,gpt4o
+4387,gpt4o,1,moderate,45.0,0,0.8,True,17.61,,gpt4o
+589,gpt4o,0,moderate,35.0,0,0.85,True,15.11,,gpt4o
+4043,gpt4o,1,high,90.0,1,0.95,True,16.61,,gpt4o
+4403,gpt4o,1,moderate,45.0,0,0.8,True,16.81,,gpt4o
+2834,gpt4o,0,moderate,35.0,0,0.7,False,14.24,agent errors,gpt4o
+1574,gpt4o,0,high,85.0,1,0.9,True,20.7,,gpt4o
+4619,gpt4o,1,moderate,50.0,0,0.7,False,15.2,agent errors,gpt4o
+4797,gpt4o,1,high,75.0,1,0.85,True,14.72,,gpt4o
+1742,gpt4o,0,moderate,35.0,0,0.6,False,16.65,agent errors,gpt4o
+4187,gpt4o,1,moderate,45.0,0,0.7,True,16.49,,gpt4o
+336,gpt4o,0,high,85.0,1,0.85,True,20.53,,gpt4o
+3459,gpt4o,0,high,85.0,1,0.88,True,18.24,,gpt4o
+4175,gpt4o,1,moderate,45.0,0,0.8,True,19.42,,gpt4o
+3241,gpt4o,0,low,11.67,0,0.93,True,19.9,,gpt4o
+702,gpt4o,0,moderate,45.0,0,0.8,False,14.75,agent errors,gpt4o
+4794,gpt4o,1,moderate,0.3,0,0.75,False,17.81,agent errors,gpt4o
+3014,gpt4o,0,moderate,35.0,0,0.8,False,17.36,agent errors,gpt4o
+4143,gpt4o,1,moderate,55.0,0,0.85,True,19.38,,gpt4o
+608,gpt4o,0,high,85.0,1,0.85,True,16.43,,gpt4o
+596,gpt4o,1,moderate,45.0,0,0.8,False,15.99,agent errors,gpt4o
+1958,gpt4o,0,high,85.0,1,0.85,False,17.45,agent errors,gpt4o
+3955,gpt4o,1,high,45.0,1,0.8,False,15.77,agent errors,gpt4o
+4817,gpt4o,1,high,55.0,1,0.85,True,16.48,,gpt4o
+538,gpt4o,1,high,90.0,1,0.85,False,16.29,agent errors,gpt4o
+4742,gpt4o,1,high,75.0,1,0.75,False,16.39,agent errors,gpt4o
+3460,gpt4o,0,high,85.0,1,0.85,False,15.41,agent errors,gpt4o
+911,gpt4o,1,high,45.0,1,0.8,False,14.68,agent errors,gpt4o
+152,gpt4o,0,high,75.0,1,0.9,True,16.14,,gpt4o
+4310,gpt4o,1,high,85.0,1,0.85,True,18.78,,gpt4o
+3298,gpt4o,0,moderate,45.0,0,0.8,True,16.53,,gpt4o
+4353,gpt4o,1,moderate,40.0,0,0.75,True,17.14,,gpt4o
+2646,gpt4o,0,low,15.0,0,0.85,True,14.86,,gpt4o
+3572,gpt4o,0,high,90.0,1,0.85,False,16.23,agent errors,gpt4o
+600,gpt4o,1,high,82.5,1,0.8,True,22.48,,gpt4o
+1197,gpt4o,0,high,85.0,1,0.9,False,12.66,agent errors,gpt4o
+264,gpt4o,0,high,80.0,1,0.9,True,14.25,,gpt4o
+4163,gpt4o,1,moderate,45.0,0,0.8,False,15.66,agent errors,gpt4o
+3623,gpt4o,0,moderate,45.0,0,0.8,True,13.39,,gpt4o
+1726,gpt4o,0,moderate,45.0,0,0.8,False,16.73,agent errors,gpt4o
+946,gpt4o,0,high,45.0,1,0.8,False,16.74,agent errors,gpt4o
+4624,gpt4o,1,high,85.0,1,0.9,True,15.64,,gpt4o
+3969,gpt4o,1,moderate,58.0,0,0.8,False,16.45,agent errors,gpt4o
+1286,gpt4o,1,high,85.0,1,0.9,True,16.32,,gpt4o
+1762,gpt4o,0,low,0.35,0,0.9,True,15.11,,gpt4o
+3808,gpt4o,0,moderate,45.0,0,0.7,False,16.1,agent errors,gpt4o
+4930,gpt4o,1,high,85.0,1,0.85,True,16.49,,gpt4o
+1380,gpt4o,0,moderate,48.0,0,0.8,False,14.76,agent errors,gpt4o
+4432,gpt4o,1,moderate,45.0,0,0.8,True,16.65,,gpt4o
+2848,gpt4o,0,moderate,25.0,0,0.7,False,12.96,agent errors,gpt4o
+1185,gpt4o,1,high,65.0,1,0.8,True,14.51,,gpt4o
+4010,gpt4o,1,high,65.0,1,0.8,False,17.71,agent errors,gpt4o
+3600,gpt4o,0,moderate,35.0,0,0.9,True,16.11,,gpt4o
+3598,gpt4o,0,moderate,35.0,0,0.85,False,16.2,agent errors,gpt4o
+195,gpt4o,1,high,45.0,1,0.8,False,22.37,agent errors,gpt4o
+929,gpt4o,1,moderate,45.0,0,0.8,True,19.33,,gpt4o
+1039,gpt4o,0,low,0.2,0,0.8,True,17.63,,gpt4o
+141,gpt4o,0,low,0.35,0,0.9,False,14.69,agent errors,gpt4o
+4641,gpt4o,1,moderate,38.333333333333336,0,0.9,True,17.29,,gpt4o
+4992,gpt4o,1,moderate,44.0,0,0.8,True,13.37,,gpt4o
+3347,gpt4o,0,moderate,35.0,0,0.85,True,16.4,,gpt4o
+4354,gpt4o,1,moderate,55.0,0,0.85,True,17.53,,gpt4o
+669,gpt4o,1,high,45.0,1,0.8,True,17.41,,gpt4o
+1371,gpt4o,0,moderate,45.0,0,0.8,False,17.24,agent errors,gpt4o
+717,gpt4o,0,moderate,35.0,0,0.8,False,15.08,agent errors,gpt4o
+3733,gpt4o,0,moderate,35.0,0,0.75,True,17.15,,gpt4o
+3534,gpt4o,0,high,85.0,1,0.9,True,20.7,,gpt4o
+398,gpt4o,1,high,85.0,1,0.9,True,19.46,,gpt4o
+121,gpt4o,1,moderate,45.0,0,0.8,False,25.52,agent errors,gpt4o
+1573,gpt4o,0,high,85.0,1,0.95,False,16.7,agent errors,gpt4o
+820,gpt4o,0,high,85.0,1,0.9,True,13.86,,gpt4o
+3350,gpt4o,0,low,5.0,0,0.9,True,17.41,,gpt4o
+4753,gpt4o,1,moderate,45.0,0,0.8,False,17.53,agent errors,gpt4o
+1298,gpt4o,0,moderate,35.0,0,0.8,False,17.59,agent errors,gpt4o
+2616,gpt4o,0,moderate,45.0,0,0.6,False,19.05,agent errors,gpt4o
+4666,gpt4o,1,high,80.0,1,0.85,False,16.99,agent errors,gpt4o
+1548,gpt4o,0,moderate,45.0,0,0.8,False,16.6,agent errors,gpt4o
+563,gpt4o,1,moderate,50.0,0,0.85,True,19.07,,gpt4o
+4615,gpt4o,1,high,85.0,1,0.88,True,20.55,,gpt4o
+339,gpt4o,0,high,80.0,1,0.85,False,20.45,agent errors,gpt4o
+4667,gpt4o,1,moderate,45.0,0,0.8,True,20.97,,gpt4o
+4958,gpt4o,1,moderate,45.0,0,0.75,True,14.8,,gpt4o
+1250,gpt4o,0,high,75.0,1,0.85,True,15.54,,gpt4o
+577,gpt4o,0,high,45.0,1,0.9,True,14.22,,gpt4o
+2948,gpt4o,0,low,12.25,0,0.95,True,20.36,,gpt4o
+4889,gpt4o,1,high,85.0,1,0.8,False,17.21,agent errors,gpt4o
+4937,gpt4o,1,high,75.0,1,0.85,True,17.3,,gpt4o
+3450,gpt4o,0,high,82.0,1,0.85,True,16.09,,gpt4o
+2786,gpt4o,0,high,45.0,1,0.8,True,16.75,,gpt4o
+4241,gpt4o,1,high,45.0,1,0.8,False,19.69,agent errors,gpt4o
+4946,gpt4o,1,high,85.0,1,0.85,True,17.25,,gpt4o
+3479,gpt4o,0,moderate,45.0,0,0.8,True,17.83,,gpt4o
+4545,gpt4o,1,high,60.0,1,0.8,False,13.72,agent errors,gpt4o
+4341,gpt4o,1,high,85.0,1,0.85,False,17.11,agent errors,gpt4o
+2080,gpt4o,0,low,0.2,0,0.85,False,17.75,agent errors,gpt4o
+4993,gpt4o,1,moderate,45.0,0,0.8,True,15.08,,gpt4o
+1418,gpt4o,0,moderate,17.5,0,0.7,True,17.56,,gpt4o
+229,gpt4o,1,high,85.0,1,0.9,False,18.43,agent errors,gpt4o
+1449,gpt4o,0,moderate,35.0,0,0.75,False,16.47,agent errors,gpt4o
+3953,gpt4o,1,moderate,45.0,0,0.7,False,18.14,agent errors,gpt4o
+2454,gpt4o,0,moderate,35.0,0,0.7,False,17.53,agent errors,gpt4o
+2279,gpt4o,0,moderate,15.0,0,0.7,True,15.35,,gpt4o
+824,gpt4o,0,high,75.0,1,0.85,True,15.95,,gpt4o
+3219,gpt4o,0,moderate,45.0,0,0.7,False,17.68,agent errors,gpt4o
+4719,gpt4o,1,moderate,45.0,0,0.8,True,17.46,,gpt4o
+4858,gpt4o,1,high,80.0,1,0.85,True,13.95,,gpt4o
+1088,gpt4o,1,high,55.0,1,0.8,False,19.6,agent errors,gpt4o
+814,gpt4o,1,high,70.0,1,0.88,True,19.0,,gpt4o
+1291,gpt4o,0,moderate,42.0,0,0.68,True,18.35,,gpt4o
+4456,gpt4o,1,moderate,45.0,0,0.7,False,15.04,agent errors,gpt4o
+4569,gpt4o,1,high,45.0,1,0.8,False,18.41,agent errors,gpt4o
+2417,gpt4o,0,low,11.0,0,0.9,True,17.4,,gpt4o
+1333,gpt4o,0,moderate,35.0,0,0.7,False,15.3,agent errors,gpt4o
+4251,gpt4o,1,moderate,45.0,0,0.8,True,18.77,,gpt4o
+1942,gpt4o,1,high,90.0,1,0.85,False,20.41,agent errors,gpt4o
+1078,gpt4o,1,high,85.0,1,0.9,True,21.26,,gpt4o
+4515,gpt4o,1,high,85.0,1,0.95,True,15.83,,gpt4o
+3132,gpt4o,0,moderate,35.0,0,0.7,False,30.53,agent errors,gpt4o
+3186,gpt4o,0,moderate,45.0,0,0.8,False,16.73,agent errors,gpt4o
+4490,gpt4o,1,high,75.0,1,0.85,True,13.7,,gpt4o
+744,gpt4o,1,high,45.0,1,0.8,False,17.77,agent errors,gpt4o
+662,gpt4o,0,high,85.0,1,0.95,False,17.09,agent errors,gpt4o
+3556,gpt4o,0,high,80.0,1,0.9,True,18.61,,gpt4o
+3468,gpt4o,0,moderate,35.0,0,0.6,False,17.32,agent errors,gpt4o
+3290,gpt4o,0,moderate,45.0,0,0.8,False,15.86,agent errors,gpt4o
+4408,gpt4o,1,moderate,45.0,0,0.8,True,17.52,,gpt4o
+4491,gpt4o,1,low,0.35,0,0.8,False,16.89,agent errors,gpt4o
+390,gpt4o,0,moderate,35.0,0,0.6,False,16.58,agent errors,gpt4o
+1105,gpt4o,1,moderate,43.5,0,0.75,False,20.38,agent errors,gpt4o
+1497,gpt4o,0,moderate,35.0,0,0.7,False,15.81,agent errors,gpt4o
+4265,gpt4o,1,high,67.0,1,0.85,False,15.55,agent errors,gpt4o
+1063,gpt4o,1,moderate,45.0,0,0.8,True,14.76,,gpt4o
+4141,gpt4o,1,moderate,45.0,0,0.7,True,17.45,,gpt4o
+4070,gpt4o,1,moderate,45.0,0,0.85,True,16.94,,gpt4o
+4039,gpt4o,1,high,45.0,1,0.8,False,16.09,agent errors,gpt4o
+585,gpt4o,0,moderate,15.0,0,0.8,True,21.34,,gpt4o
+3710,gpt4o,0,moderate,45.0,0,0.8,True,18.22,,gpt4o
+271,gpt4o,0,high,85.0,1,0.9,True,20.43,,gpt4o
+4602,gpt4o,1,high,70.0,1,0.8,False,16.87,agent errors,gpt4o
+3035,gpt4o,0,moderate,45.0,0,0.7,False,15.98,agent errors,gpt4o
+2378,gpt4o,0,moderate,45.0,0,0.8,False,18.71,agent errors,gpt4o
+4989,gpt4o,1,high,85.0,1,0.8,False,17.98,agent errors,gpt4o
+4916,gpt4o,1,moderate,45.0,0,0.85,True,19.36,,gpt4o
+2251,gpt4o,0,moderate,25.0,0,0.8,True,18.33,,gpt4o
+910,gpt4o,0,high,88.5,1,0.9,True,18.16,,gpt4o
+172,gpt4o,0,high,75.0,1,0.9,True,17.27,,gpt4o
+3825,gpt4o,0,moderate,45.0,0,0.8,False,15.37,agent errors,gpt4o
+4388,gpt4o,1,moderate,38.0,0,0.7,False,16.15,agent errors,gpt4o
+2393,gpt4o,0,high,85.0,1,0.85,True,19.12,,gpt4o
+1228,gpt4o,1,high,85.0,1,0.85,True,17.6,,gpt4o
+4502,gpt4o,1,high,0.75,1,0.85,True,20.43,,gpt4o
+3722,gpt4o,0,moderate,45.0,0,0.8,True,18.51,,gpt4o
+60,gpt4o,0,moderate,35.0,0,0.75,True,18.64,,gpt4o
+4811,gpt4o,1,high,55.0,1,0.8,False,18.4,agent errors,gpt4o
+2647,gpt4o,0,low,0.35,0,0.9,True,17.61,,gpt4o
+4499,gpt4o,1,moderate,48.0,0,0.7,False,15.71,agent errors,gpt4o
+1379,gpt4o,0,moderate,45.0,0,0.8,False,15.5,agent errors,gpt4o
+199,gpt4o,1,high,90.0,1,0.95,True,18.49,,gpt4o
+4394,gpt4o,1,moderate,45.0,0,0.85,True,15.05,,gpt4o
+3586,gpt4o,0,moderate,11.67,0,0.8,True,17.22,,gpt4o
+1791,gpt4o,0,high,90.0,1,0.9,False,17.38,agent errors,gpt4o
+2161,gemma_4,1,high,0.78,1,0.85,True,158.66,,gemma_4
+707,gemma_4,1,high,0.72,1,0.85,True,136.15,,gemma_4
+794,gemma_4,1,high,0.85,1,0.92,True,187.74,,gemma_4
+2823,gemma_4,0,moderate,37.5,0,0.95,True,83.64,,gemma_4
+665,gemma_4,0,low,16.25,0,0.95,True,110.69,,gemma_4
+3126,gemma_4,0,low,12.0,0,0.95,True,145.78,,gemma_4
+4452,gemma_4,1,moderate,52.0,0,0.85,True,94.45,,gemma_4
+1324,gemma_4,0,high,85.0,1,0.8,True,83.69,,gemma_4
+2831,gemma_4,0,moderate,42.5,0,0.94,True,69.14,,gemma_4
+4177,gemma_4,1,high,0.75,1,0.9,True,88.46,,gemma_4
+3976,gemma_4,1,high,0.75,1,0.92,True,61.6,,gemma_4
+2660,gemma_4,0,low,25.0,0,0.94,True,50.77,,gemma_4
+3381,gemma_4,0,moderate,35.0,0,0.95,True,111.15,,gemma_4
+420,gemma_4,1,high,0.72,1,0.85,True,76.07,,gemma_4
+2011,gemma_4,0,low,15.0,0,0.8,True,51.68,,gemma_4
+4405,gemma_4,0,moderate,32.0,0,0.95,True,95.1,,gemma_4
+4661,gemma_4,1,moderate,55.0,0,0.85,True,76.22,,gemma_4
+1616,gemma_4,0,low,15.0,0,0.95,True,54.3,,gemma_4
+4715,gemma_4,1,high,85.0,1,0.92,True,113.88,,gemma_4
+4510,gemma_4,1,high,0.68,1,0.85,True,88.82,,gemma_4
+3853,gemma_4,0,moderate,37.5,0,0.95,True,69.59,,gemma_4
+4924,gemma_4,1,moderate,0.6,0,0.75,True,96.31,,gemma_4
+3516,gemma_4,0,low,10.0,0,0.95,True,110.26,,gemma_4
+1167,gemma_4,1,high,0.85,1,0.92,True,38.53,,gemma_4
+516,gemma_4,1,high,0.75,1,0.85,True,75.45,,gemma_4
+369,gemma_4,1,high,82.0,1,0.85,True,133.71,,gemma_4
+3981,gemma_4,1,high,0.72,1,0.85,True,134.09,,gemma_4
+3945,gemma_4,1,high,0.72,1,0.85,True,53.14,,gemma_4
+2759,gemma_4,0,low,0.1,0,0.95,True,50.72,,gemma_4
+3277,gemma_4,0,low,15.0,0,0.95,True,65.85,,gemma_4
+4684,gemma_4,1,low,25.0,0,0.95,True,75.11,,gemma_4
+836,gemma_4,1,high,85.0,1,0.92,True,69.17,,gemma_4
+22,gemma_4,1,high,0.82,1,0.95,True,42.88,,gemma_4
+4322,gemma_4,1,high,0.6,1,0.7,True,75.5,,gemma_4
+1992,gemma_4,0,low,11.6,0,0.94,True,77.8,,gemma_4
+867,gemma_4,0,high,0.92,1,0.9,True,63.78,,gemma_4
+2029,gemma_4,0,low,15.0,0,0.95,True,69.76,,gemma_4
+2240,gemma_4,0,moderate,35.0,0,0.9,True,52.32,,gemma_4
+986,gemma_4,0,moderate,37.5,0,0.95,True,39.37,,gemma_4
+4928,gemma_4,1,high,0.72,1,0.85,True,112.58,,gemma_4
+4387,gemma_4,1,high,0.75,1,0.85,True,69.42,,gemma_4
+589,gemma_4,0,moderate,37.5,0,0.96,True,36.9,,gemma_4
+4043,gemma_4,1,high,92.5,1,0.95,True,49.18,,gemma_4
+4403,gemma_4,1,high,0.65,1,0.7,True,49.27,,gemma_4
+2834,gemma_4,0,moderate,32.5,0,0.95,True,44.73,,gemma_4
+1574,gemma_4,0,high,95.0,1,0.92,True,47.21,,gemma_4
+4619,gemma_4,1,high,0.7,1,0.75,True,40.85,,gemma_4
+4797,gemma_4,1,high,0.72,1,0.85,True,61.95,,gemma_4
+1742,gemma_4,0,high,95.0,1,0.93,True,53.06,,gemma_4
+4187,gemma_4,1,high,0.62,1,0.85,True,65.84,,gemma_4
+336,gemma_4,0,moderate,37.5,0,0.94,True,58.53,,gemma_4
+3459,gemma_4,0,moderate,32.5,0,0.95,True,57.89,,gemma_4
+4175,gemma_4,1,high,0.75,1,0.85,True,50.24,,gemma_4
+3241,gemma_4,0,low,10.0,0,0.95,True,35.4,,gemma_4
+702,gemma_4,0,low,0.2,0,0.95,True,45.42,,gemma_4
+4794,gemma_4,1,high,0.78,1,0.85,True,45.42,,gemma_4
+3014,gemma_4,0,low,20.0,0,0.92,True,36.08,,gemma_4
+4143,gemma_4,1,high,0.72,1,0.85,True,66.3,,gemma_4
+608,gemma_4,0,low,20.0,0,0.94,True,35.44,,gemma_4
+596,gemma_4,1,high,0.75,1,0.85,True,59.8,,gemma_4
+1958,gemma_4,0,high,0.88,1,0.92,True,57.11,,gemma_4
+3955,gemma_4,1,high,85.0,1,0.85,True,34.1,,gemma_4
+4817,gemma_4,1,high,0.72,1,0.85,True,108.6,,gemma_4
+538,gemma_4,1,high,0.72,1,0.85,True,83.36,,gemma_4
+4742,gemma_4,1,high,92.5,1,0.95,True,47.26,,gemma_4
+3460,gemma_4,0,low,32.5,0,0.85,True,41.57,,gemma_4
+911,gemma_4,1,high,0.72,1,0.85,True,53.82,,gemma_4
+152,gemma_4,0,low,15.0,0,0.95,True,37.86,,gemma_4
+4310,gemma_4,1,high,0.92,1,0.95,True,70.26,,gemma_4
+3298,gemma_4,0,moderate,37.5,0,0.95,True,81.33,,gemma_4
+4353,gemma_4,1,high,0.75,1,0.85,True,88.93,,gemma_4
+2646,gemma_4,0,moderate,32.5,0,0.94,True,48.1,,gemma_4
+3572,gemma_4,0,moderate,42.5,0,0.78,True,77.31,,gemma_4
+600,gemma_4,1,high,0.72,1,0.85,True,99.05,,gemma_4
+1197,gemma_4,0,high,92.0,1,0.92,True,45.31,,gemma_4
+264,gemma_4,0,high,0.88,1,0.9,True,60.96,,gemma_4
+4163,gemma_4,1,moderate,0.55,0,0.85,True,65.81,,gemma_4
+3623,gemma_4,0,low,15.0,0,0.9,True,65.99,,gemma_4
+1726,gemma_4,0,moderate,45.0,0,0.6,True,109.77,,gemma_4
+946,gemma_4,0,low,15.0,0,0.95,True,79.14,,gemma_4
+4624,gemma_4,1,high,92.5,1,0.95,True,89.36,,gemma_4
+3969,gemma_4,1,high,75.0,1,0.85,True,97.72,,gemma_4
+1286,gemma_4,1,high,92.5,1,0.95,True,51.26,,gemma_4
+1762,gemma_4,0,low,10.0,0,0.65,True,48.15,,gemma_4
+3808,gemma_4,0,moderate,32.5,0,0.95,True,60.6,,gemma_4
+4930,gemma_4,1,high,85.0,1,0.7,True,93.91,,gemma_4
+1380,gemma_4,0,low,21.25,0,0.95,True,74.35,,gemma_4
+4432,gemma_4,1,high,0.75,1,0.85,True,75.79,,gemma_4
+2848,gemma_4,0,moderate,32.5,0,0.95,True,136.94,,gemma_4
+1185,gemma_4,1,moderate,68.0,0,0.75,True,81.52,,gemma_4
+4010,gemma_4,1,high,72.0,1,0.85,True,88.79,,gemma_4
+3600,gemma_4,0,moderate,32.5,0,0.94,True,49.87,,gemma_4
+3598,gemma_4,0,moderate,32.5,0,0.95,True,48.94,,gemma_4
+195,gemma_4,1,high,0.82,1,0.85,True,82.89,,gemma_4
+929,gemma_4,1,high,0.72,1,0.85,True,88.88,,gemma_4
+1039,gemma_4,0,low,15.0,0,0.95,True,50.93,,gemma_4
+141,gemma_4,0,low,0.1,0,0.92,True,74.3,,gemma_4
+4641,gemma_4,1,moderate,55.0,0,0.85,True,88.31,,gemma_4
+4992,gemma_4,1,moderate,55.0,0,0.85,True,66.13,,gemma_4
+3347,gemma_4,0,low,32.5,0,0.95,True,101.58,,gemma_4
+4354,gemma_4,1,high,0.6,1,0.7,True,78.55,,gemma_4
+669,gemma_4,1,high,0.75,1,0.85,True,50.34,,gemma_4
+1371,gemma_4,0,low,15.0,0,0.9,True,41.55,,gemma_4
+717,gemma_4,0,low,21.25,0,0.92,True,49.68,,gemma_4
+3733,gemma_4,0,moderate,37.5,0,0.94,True,66.86,,gemma_4
+3534,gemma_4,0,moderate,32.5,0,0.95,True,89.0,,gemma_4
+398,gemma_4,1,high,0.85,1,0.94,True,34.37,,gemma_4
+121,gemma_4,1,high,85.0,1,0.92,True,103.81,,gemma_4
+1573,gemma_4,0,high,92.5,1,0.91,True,138.8,,gemma_4
+820,gemma_4,0,moderate,42.5,0,0.5,True,104.91,,gemma_4
+3350,gemma_4,0,low,0.1,0,0.95,True,68.34,,gemma_4
+4753,gemma_4,1,high,0.72,1,0.85,True,111.57,,gemma_4
+1298,gemma_4,0,low,15.0,0,0.94,True,65.26,,gemma_4
+2616,gemma_4,0,low,32.5,0,0.95,True,85.87,,gemma_4
+4666,gemma_4,1,high,0.82,1,0.9,True,76.95,,gemma_4
+1548,gemma_4,0,high,95.0,1,0.92,True,111.12,,gemma_4
+563,gemma_4,1,high,0.75,1,0.85,False,39.83,agent errors,gemma_4
+4615,gemma_4,1,high,82.5,1,0.88,True,149.13,,gemma_4
+339,gemma_4,0,low,15.0,0,0.94,True,94.84,,gemma_4
+4667,gemma_4,1,high,0.65,1,0.85,True,49.17,,gemma_4
+4958,gemma_4,1,high,0.72,1,0.85,True,90.19,,gemma_4
+1250,gemma_4,0,high,85.0,1,0.8,True,101.14,,gemma_4
+577,gemma_4,0,low,25.0,0,0.94,True,94.76,,gemma_4
+2948,gemma_4,0,moderate,37.5,0,0.9,False,234.91,agent errors,gemma_4
+4889,gemma_4,1,high,0.65,1,0.85,True,110.37,,gemma_4
+4937,gemma_4,1,high,0.75,1,0.85,True,142.77,,gemma_4
+3450,gemma_4,0,high,88.5,1,0.92,True,103.12,,gemma_4
+2786,gemma_4,0,moderate,37.5,0,0.94,True,92.42,,gemma_4
+4241,gemma_4,1,high,82.0,1,0.7,True,79.93,,gemma_4
+4946,gemma_4,1,high,0.72,1,0.85,True,121.39,,gemma_4
+3479,gemma_4,0,low,20.0,0,0.94,True,47.84,,gemma_4
+4545,gemma_4,1,high,0.72,1,0.85,True,58.17,,gemma_4
+4341,gemma_4,1,high,0.92,1,0.95,True,88.29,,gemma_4
+2080,gemma_4,0,low,15.0,0,0.9,True,66.27,,gemma_4
+4993,gemma_4,1,high,0.72,1,0.85,True,93.58,,gemma_4
+1418,gemma_4,0,low,15.0,0,0.95,True,133.38,,gemma_4
+229,gemma_4,1,high,92.0,1,0.95,True,129.44,,gemma_4
+1449,gemma_4,0,moderate,37.5,0,0.6,True,73.8,,gemma_4
+3953,gemma_4,1,high,0.65,1,0.85,True,103.32,,gemma_4
+2454,gemma_4,0,moderate,35.0,0,0.95,True,80.87,,gemma_4
+2279,gemma_4,0,moderate,42.0,0,0.5,True,135.01,,gemma_4
+824,gemma_4,0,moderate,37.5,0,0.85,True,74.61,,gemma_4
+3219,gemma_4,0,moderate,42.5,0,0.95,True,111.91,,gemma_4
+4719,gemma_4,1,high,0.72,1,0.85,True,152.42,,gemma_4
+4858,gemma_4,1,high,78.3,1,0.75,True,136.16,,gemma_4
+1088,gemma_4,1,high,0.65,1,0.85,True,267.27,,gemma_4
+814,gemma_4,1,moderate,65.0,0,0.85,True,140.34,,gemma_4
+1291,gemma_4,0,low,25.0,0,0.9,True,149.34,,gemma_4
+4456,gemma_4,1,high,0.72,1,0.85,True,83.6,,gemma_4
+4569,gemma_4,1,high,0.72,1,0.85,True,153.4,,gemma_4
+2417,gemma_4,0,moderate,32.5,0,0.96,True,146.35,,gemma_4
+1333,gemma_4,0,low,25.0,0,0.95,True,120.61,,gemma_4
+4251,gemma_4,1,moderate,52.5,0,0.85,True,157.48,,gemma_4
+1942,gemma_4,1,high,0.92,1,0.95,True,169.93,,gemma_4
+1078,gemma_4,1,high,0.88,1,0.9,True,73.48,,gemma_4
+4515,gemma_4,1,high,92.5,1,0.94,True,109.13,,gemma_4
+3132,gemma_4,0,low,32.5,0,0.91,True,112.94,,gemma_4
+3186,gemma_4,0,moderate,32.5,0,0.95,True,96.23,,gemma_4
+4490,gemma_4,1,high,0.72,1,0.85,True,93.34,,gemma_4
+744,gemma_4,1,high,0.85,1,0.94,True,93.29,,gemma_4
+662,gemma_4,0,high,92.0,1,0.92,True,119.08,,gemma_4
+3556,gemma_4,0,moderate,32.5,0,0.92,True,58.92,,gemma_4
+3468,gemma_4,0,moderate,37.5,0,0.93,True,98.3,,gemma_4
+3290,gemma_4,0,moderate,42.5,0,0.92,True,126.65,,gemma_4
+4408,gemma_4,1,moderate,55.0,0,0.85,True,105.99,,gemma_4
+4491,gemma_4,1,high,0.9,1,0.85,True,180.76,,gemma_4
+390,gemma_4,0,low,15.0,0,0.95,True,78.69,,gemma_4
+1105,gemma_4,1,high,0.72,1,0.85,True,63.83,,gemma_4
+1497,gemma_4,0,moderate,32.5,0,0.9,True,74.38,,gemma_4
+4265,gemma_4,1,high,72.0,1,0.85,True,84.66,,gemma_4
+1063,gemma_4,1,high,0.72,1,0.85,True,160.78,,gemma_4
+4141,gemma_4,1,high,0.72,1,0.85,True,57.1,,gemma_4
+4070,gemma_4,1,high,0.72,1,0.85,True,102.96,,gemma_4
+4039,gemma_4,1,high,0.75,1,0.85,True,89.65,,gemma_4
+585,gemma_4,0,moderate,42.5,0,0.9,True,119.36,,gemma_4
+3710,gemma_4,0,moderate,35.0,0,0.96,True,96.97,,gemma_4
+271,gemma_4,0,high,0.88,1,0.92,True,50.59,,gemma_4
+4602,gemma_4,1,high,0.72,1,0.85,True,162.82,,gemma_4
+3035,gemma_4,0,low,15.0,0,0.92,True,85.28,,gemma_4
+2378,gemma_4,0,moderate,42.5,0,0.95,True,127.55,,gemma_4
+4989,gemma_4,1,high,0.65,1,0.85,True,82.86,,gemma_4
+4916,gemma_4,1,high,72.0,1,0.85,True,179.59,,gemma_4
+2251,gemma_4,0,moderate,0.45,0,0.5,True,101.18,,gemma_4
+910,gemma_4,0,high,0.87,1,0.92,True,88.4,,gemma_4
+172,gemma_4,0,high,92.0,1,0.92,True,91.88,,gemma_4
+3825,gemma_4,0,low,25.0,0,0.95,True,88.54,,gemma_4
+4388,gemma_4,1,high,0.72,1,0.85,True,99.45,,gemma_4
+2393,gemma_4,0,moderate,37.5,0,0.94,True,79.49,,gemma_4
+1228,gemma_4,1,high,0.72,1,0.85,True,68.25,,gemma_4
+4502,gemma_4,1,high,0.65,1,0.85,True,61.29,,gemma_4
+3722,gemma_4,0,low,21.25,0,0.94,True,90.7,,gemma_4
+60,gemma_4,0,low,25.0,0,0.95,True,76.28,,gemma_4
+4811,gemma_4,1,high,85.0,1,0.75,True,100.88,,gemma_4
+2647,gemma_4,0,low,15.0,0,0.98,True,98.26,,gemma_4
+4499,gemma_4,1,high,82.0,1,0.75,True,97.28,,gemma_4
+1379,gemma_4,0,low,25.0,0,0.95,True,78.33,,gemma_4
+199,gemma_4,1,high,0.92,1,0.95,False,192.39,agent errors,gemma_4
+4394,gemma_4,1,high,85.0,1,0.7,False,143.73,agent errors,gemma_4
+3586,gemma_4,0,moderate,42.5,0,0.6,False,220.49,agent errors,gemma_4
+1791,gemma_4,0,high,92.0,1,0.92,True,126.82,,gemma_4
+2161,qwen_vl,1,high,45.0,1,0.8,True,23.93,,qwen_vl
+707,qwen_vl,1,high,45.0,1,0.8,True,24.32,,qwen_vl
+794,qwen_vl,1,high,45.0,1,0.8,True,17.1,,qwen_vl
+2823,qwen_vl,0,high,45.0,1,0.8,True,19.24,,qwen_vl
+665,qwen_vl,0,high,45.0,1,0.8,True,17.7,,qwen_vl
+3126,qwen_vl,0,low,45.0,0,0.8,True,21.32,,qwen_vl
+4452,qwen_vl,1,low,45.0,0,0.8,True,20.25,,qwen_vl
+1324,qwen_vl,0,high,45.0,1,0.8,True,20.22,,qwen_vl
+2831,qwen_vl,0,low,45.0,0,0.8,True,21.08,,qwen_vl
+4177,qwen_vl,1,low,45.0,0,0.8,True,19.89,,qwen_vl
+3976,qwen_vl,1,moderate,45.0,0,0.8,True,26.95,,qwen_vl
+2660,qwen_vl,0,high,45.0,1,0.8,True,36.9,,qwen_vl
+3381,qwen_vl,0,low,15.0,0,0.95,True,38.78,,qwen_vl
+420,qwen_vl,1,high,45.0,1,0.8,True,19.83,,qwen_vl
+2011,qwen_vl,0,high,45.0,1,0.8,True,18.96,,qwen_vl
+4405,qwen_vl,0,moderate,45.0,0,0.8,True,20.36,,qwen_vl
+4661,qwen_vl,1,low,45.0,0,0.8,True,22.58,,qwen_vl
+1616,qwen_vl,0,high,45.0,1,0.8,True,21.52,,qwen_vl
+4715,qwen_vl,1,high,45.0,1,0.8,True,18.77,,qwen_vl
+4510,qwen_vl,1,high,45.0,1,0.8,True,15.29,,qwen_vl
+3853,qwen_vl,0,low,45.0,0,0.8,True,17.99,,qwen_vl
+4924,qwen_vl,1,low,0.35,0,0.95,True,23.31,,qwen_vl
+3516,qwen_vl,0,high,45.0,1,0.8,True,24.67,,qwen_vl
+1167,qwen_vl,1,high,45.0,1,0.8,True,16.74,,qwen_vl
+516,qwen_vl,1,high,45.0,1,0.8,True,22.13,,qwen_vl
+369,qwen_vl,1,high,45.0,1,0.8,True,20.49,,qwen_vl
+3981,qwen_vl,1,high,45.0,1,0.8,True,22.73,,qwen_vl
+3945,qwen_vl,1,high,45.0,1,0.8,True,24.51,,qwen_vl
+2759,qwen_vl,0,low,0.35,0,0.92,True,19.97,,qwen_vl
+3277,qwen_vl,0,low,45.0,0,0.8,True,18.2,,qwen_vl
+4684,qwen_vl,1,low,45.0,0,0.8,True,17.19,,qwen_vl
+836,qwen_vl,1,high,45.0,1,0.8,True,25.53,,qwen_vl
+22,qwen_vl,1,high,45.0,1,0.8,True,21.65,,qwen_vl
+4322,qwen_vl,1,high,45.0,1,0.8,True,27.47,,qwen_vl
+1992,qwen_vl,0,low,0.35,0,0.8,True,19.99,,qwen_vl
+867,qwen_vl,0,high,45.0,1,0.8,True,17.68,,qwen_vl
+2029,qwen_vl,0,high,45.0,1,0.8,True,20.93,,qwen_vl
+2240,qwen_vl,0,high,45.0,1,0.8,True,23.61,,qwen_vl
+986,qwen_vl,0,low,45.0,0,0.8,True,22.53,,qwen_vl
+4928,qwen_vl,1,low,45.0,0,0.8,True,21.66,,qwen_vl
+4387,qwen_vl,1,low,45.0,0,0.8,True,15.27,,qwen_vl
+589,qwen_vl,0,low,45.0,0,0.8,True,15.03,,qwen_vl
+4043,qwen_vl,1,high,45.0,1,0.8,True,22.34,,qwen_vl
+4403,qwen_vl,1,high,45.0,1,0.8,True,26.5,,qwen_vl
+2834,qwen_vl,0,high,45.0,1,0.8,True,20.47,,qwen_vl
+1574,qwen_vl,0,high,45.0,1,0.8,True,22.5,,qwen_vl
+4619,qwen_vl,1,moderate,45.0,0,0.8,True,21.16,,qwen_vl
+4797,qwen_vl,1,low,45.0,0,0.8,True,21.12,,qwen_vl
+1742,qwen_vl,0,high,45.0,1,0.8,True,25.01,,qwen_vl
+4187,qwen_vl,1,low,25.0,0,0.95,True,18.82,,qwen_vl
+336,qwen_vl,0,high,45.0,1,0.8,True,19.09,,qwen_vl
+3459,qwen_vl,0,high,45.0,1,0.8,True,21.0,,qwen_vl
+4175,qwen_vl,1,low,45.0,0,0.8,True,18.25,,qwen_vl
+3241,qwen_vl,0,high,45.0,1,0.8,True,19.34,,qwen_vl
+702,qwen_vl,0,low,45.0,0,0.8,True,17.99,,qwen_vl
+4794,qwen_vl,1,low,45.0,0,0.8,True,25.43,,qwen_vl
+3014,qwen_vl,0,low,45.0,0,0.8,True,19.95,,qwen_vl
+4143,qwen_vl,1,low,45.0,0,0.8,True,28.63,,qwen_vl
+608,qwen_vl,0,high,45.0,1,0.8,True,20.12,,qwen_vl
+596,qwen_vl,1,low,45.0,0,0.8,True,19.73,,qwen_vl
+1958,qwen_vl,0,high,45.0,1,0.8,True,23.06,,qwen_vl
+3955,qwen_vl,1,low,45.0,0,0.8,True,19.4,,qwen_vl
+4817,qwen_vl,1,low,45.0,0,0.8,True,22.46,,qwen_vl
+538,qwen_vl,1,high,45.0,1,0.8,True,27.25,,qwen_vl
+4742,qwen_vl,1,high,45.0,1,0.8,True,20.67,,qwen_vl
+3460,qwen_vl,0,high,45.0,1,0.8,True,21.33,,qwen_vl
+911,qwen_vl,1,low,45.0,0,0.8,True,25.9,,qwen_vl
+152,qwen_vl,0,high,45.0,1,0.8,True,29.14,,qwen_vl
+4310,qwen_vl,1,high,45.0,1,0.8,True,27.37,,qwen_vl
+3298,qwen_vl,0,high,45.0,1,0.8,True,18.01,,qwen_vl
+4353,qwen_vl,1,low,45.0,0,0.8,True,22.61,,qwen_vl
+2646,qwen_vl,0,moderate,45.0,0,0.8,True,28.67,,qwen_vl
+3572,qwen_vl,0,high,45.0,1,0.8,True,36.03,,qwen_vl
+600,qwen_vl,1,high,45.0,1,0.8,True,21.66,,qwen_vl
+1197,qwen_vl,0,high,45.0,1,0.8,True,20.19,,qwen_vl
+264,qwen_vl,0,high,45.0,1,0.8,True,22.21,,qwen_vl
+4163,qwen_vl,1,low,45.0,0,0.8,True,19.23,,qwen_vl
+3623,qwen_vl,0,high,45.0,1,0.8,True,22.16,,qwen_vl
+1726,qwen_vl,0,high,45.0,1,0.8,True,18.7,,qwen_vl
+946,qwen_vl,0,low,45.0,0,0.8,True,23.73,,qwen_vl
+4624,qwen_vl,1,high,45.0,1,0.8,True,18.32,,qwen_vl
+3969,qwen_vl,1,moderate,45.0,0,0.8,True,19.61,,qwen_vl
+1286,qwen_vl,1,high,45.0,1,0.8,True,24.85,,qwen_vl
+1762,qwen_vl,0,high,45.0,1,0.8,True,31.84,,qwen_vl
+3808,qwen_vl,0,low,45.0,0,0.8,True,23.23,,qwen_vl
+4930,qwen_vl,1,high,45.0,1,0.8,True,22.37,,qwen_vl
+1380,qwen_vl,0,high,45.0,1,0.8,True,19.32,,qwen_vl
+4432,qwen_vl,1,low,45.0,0,0.8,True,23.68,,qwen_vl
+2848,qwen_vl,0,moderate,45.0,0,0.8,True,20.61,,qwen_vl
+1185,qwen_vl,1,high,45.0,1,0.8,True,28.83,,qwen_vl
+4010,qwen_vl,1,high,45.0,1,0.8,True,24.52,,qwen_vl
+3600,qwen_vl,0,high,45.0,1,0.8,True,19.72,,qwen_vl
+3598,qwen_vl,0,low,45.0,0,0.8,True,28.18,,qwen_vl
+195,qwen_vl,1,high,45.0,1,0.8,True,22.21,,qwen_vl
+929,qwen_vl,1,high,45.0,1,0.8,True,21.3,,qwen_vl
+1039,qwen_vl,0,high,45.0,1,0.8,True,30.14,,qwen_vl
+141,qwen_vl,0,low,0.35,0,0.92,True,21.58,,qwen_vl
+4641,qwen_vl,1,low,45.0,0,0.8,True,22.78,,qwen_vl
+4992,qwen_vl,1,low,45.0,0,0.8,True,20.26,,qwen_vl
+3347,qwen_vl,0,low,45.0,0,0.8,True,19.71,,qwen_vl
+4354,qwen_vl,1,low,0.35,0,0.8,True,14.16,,qwen_vl
+669,qwen_vl,1,low,45.0,0,0.8,True,25.3,,qwen_vl
+1371,qwen_vl,0,high,45.0,1,0.8,True,19.5,,qwen_vl
+717,qwen_vl,0,high,45.0,1,0.8,True,23.21,,qwen_vl
+3733,qwen_vl,0,low,35.0,0,0.8,True,20.12,,qwen_vl
+3534,qwen_vl,0,low,45.0,0,0.8,True,23.68,,qwen_vl
+398,qwen_vl,1,high,45.0,1,0.8,True,12.45,,qwen_vl
+121,qwen_vl,1,moderate,45.0,0,0.8,True,34.61,,qwen_vl
+1573,qwen_vl,0,high,45.0,1,0.8,True,36.68,,qwen_vl
+820,qwen_vl,0,high,45.0,1,0.8,True,22.82,,qwen_vl
+3350,qwen_vl,0,low,0.35,0,0.8,True,24.11,,qwen_vl
+4753,qwen_vl,1,high,45.0,1,0.8,True,28.24,,qwen_vl
+1298,qwen_vl,0,high,45.0,1,0.8,True,27.84,,qwen_vl
+2616,qwen_vl,0,high,45.0,1,0.8,True,24.06,,qwen_vl
+4666,qwen_vl,1,high,45.0,1,0.8,True,29.28,,qwen_vl
+1548,qwen_vl,0,high,45.0,1,0.8,True,24.11,,qwen_vl
+563,qwen_vl,1,low,45.0,0,0.8,True,27.4,,qwen_vl
+4615,qwen_vl,1,high,45.0,1,0.8,True,30.98,,qwen_vl
+339,qwen_vl,0,high,45.0,1,0.8,True,26.73,,qwen_vl
+4667,qwen_vl,1,low,45.0,0,0.8,True,19.73,,qwen_vl
+4958,qwen_vl,1,high,45.0,1,0.8,True,25.78,,qwen_vl
+1250,qwen_vl,0,high,45.0,1,0.8,True,25.65,,qwen_vl
+577,qwen_vl,0,low,45.0,0,0.8,True,18.94,,qwen_vl
+2948,qwen_vl,0,low,45.0,0,0.8,True,22.5,,qwen_vl
+4889,qwen_vl,1,high,45.0,1,0.8,True,23.06,,qwen_vl
+4937,qwen_vl,1,low,45.0,0,0.8,True,14.6,,qwen_vl
+3450,qwen_vl,0,high,45.0,1,0.8,True,21.7,,qwen_vl
+2786,qwen_vl,0,high,45.0,1,0.8,True,17.44,,qwen_vl
+4241,qwen_vl,1,high,45.0,1,0.8,True,18.61,,qwen_vl
+4946,qwen_vl,1,low,45.0,0,0.8,True,17.89,,qwen_vl
+3479,qwen_vl,0,high,45.0,1,0.8,True,22.6,,qwen_vl
+4545,qwen_vl,1,low,45.0,0,0.8,True,25.49,,qwen_vl
+4341,qwen_vl,1,high,45.0,1,0.8,True,23.92,,qwen_vl
+2080,qwen_vl,0,high,45.0,1,0.8,True,34.41,,qwen_vl
+4993,qwen_vl,1,low,45.0,0,0.8,True,22.67,,qwen_vl
+1418,qwen_vl,0,high,45.0,1,0.8,True,24.46,,qwen_vl
+229,qwen_vl,1,high,45.0,1,0.8,True,20.58,,qwen_vl
+1449,qwen_vl,0,high,45.0,1,0.8,True,18.55,,qwen_vl
+3953,qwen_vl,1,high,45.0,1,0.8,True,26.19,,qwen_vl
+2454,qwen_vl,0,low,45.0,0,0.8,True,21.12,,qwen_vl
+2279,qwen_vl,0,high,45.0,1,0.8,True,24.66,,qwen_vl
+824,qwen_vl,0,high,45.0,1,0.8,True,25.76,,qwen_vl
+3219,qwen_vl,0,high,45.0,1,0.8,True,26.94,,qwen_vl
+4719,qwen_vl,1,low,45.0,0,0.8,True,16.82,,qwen_vl
+4858,qwen_vl,1,high,45.0,1,0.8,True,22.41,,qwen_vl
+1088,qwen_vl,1,high,45.0,1,0.8,True,23.24,,qwen_vl
+814,qwen_vl,1,high,45.0,1,0.8,True,21.21,,qwen_vl
+1291,qwen_vl,0,high,45.0,1,0.8,True,18.05,,qwen_vl
+4456,qwen_vl,1,high,45.0,1,0.8,True,16.65,,qwen_vl
+4569,qwen_vl,1,high,45.0,1,0.8,True,24.71,,qwen_vl
+2417,qwen_vl,0,low,0.35,0,0.92,True,20.58,,qwen_vl
+1333,qwen_vl,0,low,25.0,0,0.92,True,20.43,,qwen_vl
+4251,qwen_vl,1,low,45.0,0,0.8,True,17.0,,qwen_vl
+1942,qwen_vl,1,high,45.0,1,0.8,True,24.83,,qwen_vl
+1078,qwen_vl,1,high,45.0,1,0.8,True,25.71,,qwen_vl
+4515,qwen_vl,1,high,45.0,1,0.8,True,25.22,,qwen_vl
+3132,qwen_vl,0,high,45.0,1,0.8,True,24.46,,qwen_vl
+3186,qwen_vl,0,high,45.0,1,0.8,True,18.57,,qwen_vl
+4490,qwen_vl,1,high,45.0,1,0.8,True,19.85,,qwen_vl
+744,qwen_vl,1,high,45.0,1,0.8,True,17.51,,qwen_vl
+662,qwen_vl,0,high,45.0,1,0.8,True,16.95,,qwen_vl
+3556,qwen_vl,0,high,45.0,1,0.8,True,20.53,,qwen_vl
+3468,qwen_vl,0,high,45.0,1,0.8,True,19.38,,qwen_vl
+3290,qwen_vl,0,high,45.0,1,0.8,True,14.5,,qwen_vl
+4408,qwen_vl,1,low,45.0,0,0.8,True,17.66,,qwen_vl
+4491,qwen_vl,1,high,45.0,1,0.8,True,25.54,,qwen_vl
+390,qwen_vl,0,high,45.0,1,0.8,True,18.11,,qwen_vl
+1105,qwen_vl,1,high,45.0,1,0.8,True,22.53,,qwen_vl
+1497,qwen_vl,0,high,45.0,1,0.8,True,19.86,,qwen_vl
+4265,qwen_vl,1,low,45.0,0,0.8,True,16.83,,qwen_vl
+1063,qwen_vl,1,low,45.0,0,0.8,True,20.32,,qwen_vl
+4141,qwen_vl,1,high,45.0,1,0.8,True,14.55,,qwen_vl
+4070,qwen_vl,1,high,45.0,1,0.8,True,16.71,,qwen_vl
+4039,qwen_vl,1,moderate,45.0,0,0.8,True,16.28,,qwen_vl
+585,qwen_vl,0,low,45.0,0,0.8,True,13.08,,qwen_vl
+3710,qwen_vl,0,low,0.0,0,0.95,True,10.91,,qwen_vl
+271,qwen_vl,0,high,45.0,1,0.8,True,14.95,,qwen_vl
+4602,qwen_vl,1,low,45.0,0,0.8,True,15.81,,qwen_vl
+3035,qwen_vl,0,low,15.0,0,0.95,True,16.2,,qwen_vl
+2378,qwen_vl,0,high,45.0,1,0.8,True,15.92,,qwen_vl
+4989,qwen_vl,1,moderate,45.0,0,0.8,True,14.17,,qwen_vl
+4916,qwen_vl,1,low,0.35,0,0.8,True,20.33,,qwen_vl
+2251,qwen_vl,0,high,45.0,1,0.8,True,16.63,,qwen_vl
+910,qwen_vl,0,high,45.0,1,0.8,True,18.5,,qwen_vl
+172,qwen_vl,0,high,45.0,1,0.8,True,23.25,,qwen_vl
+3825,qwen_vl,0,moderate,45.0,0,0.8,True,15.54,,qwen_vl
+4388,qwen_vl,1,low,0.35,0,0.8,True,17.53,,qwen_vl
+2393,qwen_vl,0,low,25.0,0,0.95,True,13.54,,qwen_vl
+1228,qwen_vl,1,high,45.0,1,0.8,True,15.22,,qwen_vl
+4502,qwen_vl,1,high,45.0,1,0.8,True,13.22,,qwen_vl
+3722,qwen_vl,0,low,15.0,0,0.95,True,17.16,,qwen_vl
+60,qwen_vl,0,low,0.35,0,0.95,True,21.38,,qwen_vl
+4811,qwen_vl,1,low,45.0,0,0.8,True,18.57,,qwen_vl
+2647,qwen_vl,0,low,0.35,0,0.95,True,15.39,,qwen_vl
+4499,qwen_vl,1,high,45.0,1,0.8,True,20.65,,qwen_vl
+1379,qwen_vl,0,high,45.0,1,0.8,True,18.26,,qwen_vl
+199,qwen_vl,1,high,45.0,1,0.8,True,29.18,,qwen_vl
+4394,qwen_vl,1,low,45.0,0,0.8,True,11.88,,qwen_vl
+3586,qwen_vl,0,high,45.0,1,0.8,True,15.83,,qwen_vl
+1791,qwen_vl,0,high,45.0,1,0.8,True,17.47,,qwen_vl
